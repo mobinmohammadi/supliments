@@ -1,0 +1,117 @@
+/* .swiper-button-prev{
+  width: 20px!important ;
+} */
+@font-face {
+  font-family: "yekan";
+  src: url("./assets/Fonts/Yekan.woff");
+}
+body{
+  box-sizing: border-box;
+  font-family: yekan;
+}
+.ss{
+  font-family: "yekan";
+  font-weight: bold;
+}
+
+.mt-10-custom{
+  margin-top: 10px;
+}
+
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.container-custom{
+  width: 98%;
+  margin: 0 auto;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.breadcrumb-item{
+  position: relative;
+}
+
+.breadcrumb-item::before{
+  position: absolute;
+  transform: rotate(45deg);
+  content: "";
+  height: 77%;
+  top: -5px;
+  left: 0;
+  width: 4px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  background: #f1f5f9;
+}
+.breadcrumb-item::after{
+  position: absolute;
+  margin-right:5px;
+  transform: rotate(-45deg);
+  bottom: -5px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  content: "";
+  left: 0;
+  height: 77%;
+  width: 4px;
+  background: #f1f5f9;
+}
+
+.item-products-details{
+position: relative;
+}
+.show-Search__box{
+  top: 0;
+  transition: all 1s ease;
+}
+
+.item-products-details::before{
+  position: absolute;
+  content:  "";
+  width: 8px;
+  height: 8px;
+  right: 13px;
+  top: 30%;
+  border-radius: 100%;
+  background: red;
+}
+
+
+.abs{
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.abs::before{
+  position: absolute;
+  content:  "";
+  width: 3rem;
+  height: 100%;
+  background-color:#f1f5f9;
+  right: -15%;
+  opacity: 0.5;
+  border-radius: 100%;
+}
+
+
