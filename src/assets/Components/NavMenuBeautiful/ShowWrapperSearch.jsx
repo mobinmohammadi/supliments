@@ -1,12 +1,48 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import { allProducts } from "../../../Data";
+import { Link } from "react-router-dom";
 
-export default function ShowWrapperSearch({
-  cancelActions,
-  isShowSearchBox,
-}) {
+export default function ShowWrapperSearch({ cancelActions, isShowSearchBox }) {
+  const [textValueSearch, setTextValueSearch] = useState("");
+  const [allResaltSearch, setAllResaltSearch] = useState([]);
+  const [isShowLoaderSearch, setIsShowLoaderSearch] = useState(false);
+  const searchLoader = useRef();
+  const wrapperResultSearch = useRef();
+  const [isShowStyleSearch, setIsShowStyleSearch] = useState(false);
+
+  const searchHandler = (e) => {
+    setTimeout(() => {
+      setIsShowLoaderSearch(true);
+    }, 200);
+    setTimeout(() => {
+      setIsShowLoaderSearch(false);
+    }, 900);
+
+    // setTimeout(() => {
+    //   setIsShowLoaderSearch(false)
+
+    // }, 600);
+    setTextValueSearch(e.target.value);
+    setTimeout(() => {}, 700);
+    if (textValueSearch.length < 3) {
+      setAllResaltSearch([]);
+    } else if (e.keyCode == 8) {
+      setAllResaltSearch([]);
+    } else {
+      let restultSearch = allProducts.filter((item) =>
+        item.name.includes(textValueSearch)
+      );
+      setTimeout(() => {
+        setIsShowStyleSearch(true);
+
+        setAllResaltSearch(restultSearch);
+      }, 1000);
+      console.log(allResaltSearch);
+    }
+  };
   return (
     <div
-      className={`bg-white w-full h-[90vh] ${
+      className={`bg-slate-200 w-full h-[92vh] ${
         isShowSearchBox ? " show-Search__box" : "top-full transition-all"
       }  rounded-t-2xl shadow-2xl fixed top-[100%] left-0`}
     >
@@ -21,6 +57,9 @@ export default function ShowWrapperSearch({
         </div>
         <div className="text-zinc-800 rounded-md h-10 overflow-hidden bg-slate-300 flex">
           <input
+            value={textValueSearch}
+            onChange={(e) => searchHandler(e)}
+            onKeyDown={(e) => searchHandler(e)}
             type="text"
             className="text-zinc-900 font w-full  pt-2 pb-2 pr-1 outline-0"
             placeholder="محصول مورد نظرتون را وارد نمایید .... "
@@ -31,11 +70,50 @@ export default function ShowWrapperSearch({
             </svg>
           </div>
         </div>
-        <div className="text-black mt-2 border-t border-solid border-t-amber-500 pt-2 flex items-center justify-between font-bold">
-          <span className="text-base font-bold tracking-wide">
-            نتیجه جستوجو
-          </span>
-          <span>2 مورد یافت شد</span>
+
+        <div className="">
+          <div className="text-black mt-2 border-t border-solid border-t-amber-500 pt-2 flex items-center justify-between font-bold">
+            <span className="text-base font-bold tracking-wide">
+              نتیجه جستوجو
+            </span>
+            <span>{allResaltSearch.length} مورد یافت شد</span>
+          </div>
+          {isShowLoaderSearch ? (
+            <div
+              ref={searchLoader}
+              className={`h-2s mt-4 rounded-md z-20  
+  bg-slate-200 h-dull ${isShowLoaderSearch ? "flex" : "hidden"}`}
+            >
+              <span className="loader-searchs"></span>
+            </div>
+          ) : null}
+          <div className="h-[420px] overflow-y-scroll">
+            {allResaltSearch.map((item) => (
+              <div
+                ref={wrapperResultSearch}
+                className={`${
+                  isShowStyleSearch ? "activeStyleSearchBox" : ""
+                }  text-zinc-800 mt-4 pl-3 rounded-sm w-[70%] bg-slate-100  flex justify-between items-center`}
+              >
+                <div className="flex gap-3 items-center ">
+                  <img
+                    className="w-20 h-20 rounded-l-md"
+                    src={item.img}
+                    alt=""
+                  />
+                  <div className="flex flex-col">
+                    <span>{item.name}</span>
+                    <span>{item.price}</span>
+                  </div>
+                </div>
+                <Link to={`/onspageproduct/${item.id}`} className="w-10 h-10  text-white rounded-xl bg-red-500 flex items-center justify-center">
+                  <svg className="w-6 h-6  rounded-full">
+                    <use href="#chevron-left"></use>
+                  </svg>
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
