@@ -40,7 +40,7 @@ export default function BoxesForUserBaskets({id, name, img, price, count }) {
         <div className="flex flex-col justify-between">
           <span className="text-sm">{name}</span>
           <div className="flex gap-2">
-            <span className="text-xs ">{price} تومان</span>
+            <span className="text-xs ">{price.toLocaleString()} تومان</span>
             <span className="text-xs text-cyan-700"> {count} عدد</span>
           </div>
         </div>

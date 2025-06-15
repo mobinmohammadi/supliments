@@ -1,28 +1,21 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import BoxesForUserBaskets from "./../BoxesForUserBaskets/BoxesForUserBaskets";
+import { CartContext } from "../../../Context/CartContext";
 
 export default function BasketMobile({
   setIsShowLayerModals,
   closeModalUserBasket,
-  cart,
   modalUserBasket,
 }) {
+  const { addToCart, cart , allPriceInBasket} = useContext(CartContext);
 
   const [allPrice, setAllPrice] = useState(0);
 
-  function handleAllPriceInBasket() {
-    const totalePrice = cart
-      .flatMap((item) => item.price * item.count)
-      .reduce((acc, num) => acc + num, 0);
-    setAllPrice(totalePrice);
-  }
-
-  JSON.parse(localStorage.getItem("cart"))
 
 
-  useEffect(() => {
-    handleAllPriceInBasket();
-  }, [cart]);
+
+
+  
 
   return (
     <div
@@ -61,7 +54,7 @@ export default function BasketMobile({
               <span className="font-bold text-md">قیمت کل : </span>
 
               <span className="font-bold text-md">
-                {allPrice.toLocaleString()} تومان
+                {allPriceInBasket.toLocaleString()} تومان
               </span>
             </div>
             <div className=" bg-green-600 flex justify-center  rounded-sm & > *:cursor-pointer hover:bg-green-700 transition-all cursor-pointer p-3">

@@ -8,6 +8,8 @@ export const CartProvider = ({ children }) => {
     const storedCart = localStorage.getItem("cart");
     return storedCart ? JSON.parse(storedCart) : [];
   });
+  const [allPriceInBasket , setAllPriceInBasket] = useState(0)
+
   const saveInToLocalStorage = (cart) => {
     localStorage.setItem("cart", JSON.stringify(cart));
   };
@@ -31,9 +33,7 @@ export const CartProvider = ({ children }) => {
     });
   };
 
-  useEffect(() => {
-    saveInToLocalStorage(cart);
-  }, [cart]);
+
   const addToCart = (product) => {
     console.log(product);
     
@@ -71,8 +71,20 @@ export const CartProvider = ({ children }) => {
     );
   };
 
+  function allPriceArrayBasket() {
+    const allPrice = cart.flatMap(item => item.price * item.count).reduce((num , acc) => acc + num ,0)
+    console.log(allPrice);
+    setAllPriceInBasket(allPrice)
+    
+  }
+
+  useEffect(() => {
+    saveInToLocalStorage(cart);
+    allPriceArrayBasket()
+  }, [cart]);
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeInBasket }}>
+    <CartContext.Provider value={{ cart, addToCart, removeInBasket , allPriceInBasket }}>
       {children}
     </CartContext.Provider>
   );

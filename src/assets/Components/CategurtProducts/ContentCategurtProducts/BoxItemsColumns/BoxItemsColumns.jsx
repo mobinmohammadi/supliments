@@ -13,7 +13,7 @@ export default function BoxItemsColumns({ items }) {
         <div className="pr-1  line-clamp-1 flex flex-col justify-center gap-2">
           <Link to={`/onspageproduct/${id}`} className=" text-xs sm:text-sm max-h-[1.3em]  line-clamp-1">نام : {name} </Link>
           <div className=" text-x sm:text-sm flex items-center gap-0.5 ">
-            <span>قیمت : {price}</span>
+            <span>قیمت : {price.toLocaleString()}</span>
             <span className="font-Morabba">تومان </span>
           </div>
         </div>

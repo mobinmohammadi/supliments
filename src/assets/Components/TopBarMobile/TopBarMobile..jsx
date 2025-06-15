@@ -11,8 +11,8 @@ import BasketMobile from "./BasketMobile/BasketMobile.jsx";
 import SearchBoxTopBar from "./SearchBoxTopBar/SearchBoxTopBar.jsx";
 import ItemInBasketPc from "../ItemInBasketPc/ItemInBasketPc.jsx";
 import BoxesForUserBaskets from "./BoxesForUserBaskets/BoxesForUserBaskets.jsx";
-export default function TopBarMobile() {
-  const { addToCart, cart } = useContext(CartContext);
+export default function   TopBarMobile() {
+  const { addToCart, cart , allPriceInBasket} = useContext(CartContext);
 
   const modalUserBasket = useRef();
   const showDetailsSearch = useRef();
@@ -86,7 +86,7 @@ export default function TopBarMobile() {
                       cart.length > 2 ? "overflow-y-scroll h-[300px]" : ""
                     }`}
                   >
-                    {cart ? (
+                    {cart.length ? (
                       cart.map((item) => (
                         <BoxesForUserBaskets {...item} />
                       ))
