@@ -10,7 +10,10 @@ import { CartContext } from "../../Context/CartContext.jsx";
 import BasketMobile from "./BasketMobile/BasketMobile.jsx";
 import SearchBoxTopBar from "./SearchBoxTopBar/SearchBoxTopBar.jsx";
 import ItemInBasketPc from "../ItemInBasketPc/ItemInBasketPc.jsx";
-export default function TopBarMobile({ allPrices, arrayUserBasket }) {
+import BoxesForUserBaskets from "./BoxesForUserBaskets/BoxesForUserBaskets.jsx";
+export default function TopBarMobile() {
+  const { addToCart, cart } = useContext(CartContext);
+
   const modalUserBasket = useRef();
   const showDetailsSearch = useRef();
 
@@ -40,8 +43,6 @@ export default function TopBarMobile({ allPrices, arrayUserBasket }) {
     showDetailsSearch.current.classList.remove("showSearchWrapper");
     showDetailsSearch.current.classList.add("hiddenSearchWrapper", "invisible");
   };
-
-  const { cart, removeInBasket } = useContext(CartContext);
 
   return (
     <div className=" border-b-4 block border-solid border-sky-700 bg-white fixed w-full z-20 ">
@@ -85,14 +86,10 @@ export default function TopBarMobile({ allPrices, arrayUserBasket }) {
                       cart.length > 2 ? "overflow-y-scroll h-[300px]" : ""
                     }`}
                   >
-                    {cart.length ? (
-                      <div className="">
-                        <div className="">
-                          {cart.map((item) => (
-                            <ItemInBasketPc {...item} />
-                          ))}
-                        </div>
-                      </div>
+                    {cart ? (
+                      cart.map((item) => (
+                        <BoxesForUserBaskets {...item} />
+                      ))
                     ) : (
                       <span className="text-center pt-2 pb-2 font-Morabba-Bold text-sm border-dotted border-b-sky-700 border-b-2">
                         سبد خرید شما خالی میباشد ☹️
@@ -125,15 +122,17 @@ export default function TopBarMobile({ allPrices, arrayUserBasket }) {
             onClick={() => openModalUserbasket()}
             className="relative border-1 pt-1 pb-1 flex md:hidden pr-6 pl-2 mr-2 rounded-l-sm cursor-pointer bg-rose-600 text-white rounded-r-md"
           >
-            {arrayUserBasket?.length ? (
+            {cart?.length ? (
               <div className="w-5 h-5 bg-zinc-700 transition-all rounded-full text-center flex justify-center items-center absolute -right-2 -top-3">
-                <span>{arrayUserBasket?.length}</span>
+                <span>{cart?.length}</span>
               </div>
             ) : null}
             <svg className="w-5 h-5">
               <use href="#shopping-cart"></use>
             </svg>
-            <span className="absolute -top-2 -right-2 bg-zinc-900 p-1 font-Dana rounded-full pr-2 pl-2 text-x text-white">{cart.length}</span>
+            <span className="absolute -top-2 -right-2 bg-zinc-900 p-1 font-Dana rounded-full pr-2 pl-2 text-x text-white">
+              {cart.length}
+            </span>
           </div>
         </div>
       </div>

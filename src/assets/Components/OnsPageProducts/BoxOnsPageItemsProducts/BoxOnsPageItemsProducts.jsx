@@ -1,7 +1,10 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { CartContext } from "../../../Context/CartContext";
 
 export default function BoxOnsPageItemsProducts({addProductsToBasket ,products}) {
+
+  const {addToCart} = useContext(CartContext)
 
    const btnAddToBasket = useRef(null)
     const loaderAddToBasket = useRef(null)
@@ -9,7 +12,7 @@ export default function BoxOnsPageItemsProducts({addProductsToBasket ,products})
   
     const loaderAndAddToBasketHandler = (e) => {
       // console.log("ljksjvji ===> ", props.items.id);
-      addProductsToBasket(e)
+      addToCart(products)
   
       disibledAddToBasketBtn.current.classList.add("opacity-100")
       disibledAddToBasketBtn.current.classList.add("transitions-all")
@@ -50,7 +53,7 @@ export default function BoxOnsPageItemsProducts({addProductsToBasket ,products})
         <div className="flex justify-between gap-3 props-center mt-2">
           <span className="text-xs">قیمت {products.price} </span>
         </div>
-        <div onClick={() => loaderAndAddToBasketHandler(products.id)} className="relative bg-green-500 rounded-sm h-8 flex items-center justify-center">
+        <div onClick={() => loaderAndAddToBasketHandler(products)} className="relative bg-green-500 rounded-sm h-8 flex items-center justify-center">
           <button  ref={btnAddToBasket} className=" cursor-pointer w-full h-full text-xs pt-2 pb-2   text-white"  >
             افزودن به سبد خرید
           </button>

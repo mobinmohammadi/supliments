@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useRef, useState } from "react";
+import React, { memo, useContext, useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { allProducts } from "../../../../Data";
 import OnsPageSliderProduct from "../OnsPageSliderProduct/OnsPageSliderProduct";
@@ -7,13 +7,12 @@ import TasteProducts from "../TasteProducts/TasteProducts";
 import ShoppingCartDetailAndOtherSpecifications from "../ShoppingCartDetailAndOtherSpecifications/ShoppingCartDetailAndOtherSpecifications";
 import NameAndCateguryNameAndMore from "../NameAndCateguryNameAndMore/NameAndCateguryNameAndMore";
 import ImagesAndSliderForProductsSinglePages from "../ImagesAndSliderForProductsSinglePages/ImagesAndSliderForProductsSinglePages";
+import { CartContext } from "../../../Context/CartContext";
 
 export default function OnsPageContent({
-  allPrcie,
-  addProductsToBasket,
-  idProducts,
-  setIdProducts,
 }) {
+
+  const { addToCart } = useContext(CartContext)
   const [srcProductStatus, setSrcProductStatus] = useState();
   const [isShowSliderMoreOnOneProducts, setIsShowSliderMoreOnOneProducts] =
     useState(false);
@@ -149,7 +148,6 @@ export default function OnsPageContent({
                   setIdToast={setIdToast}
                 />
                 <ShoppingCartDetailAndOtherSpecifications
-                addProductsToBasket={addProductsToBasket}
                   filtredOnsProducts={filtredOnsProducts}
                   titleForBasket={titleForBasket}
                   setTitleForBasket={setTitleForBasket}
@@ -199,7 +197,7 @@ export default function OnsPageContent({
       <div className="w-full flex items-center justify-center">
         <div
           ref={btnAferLoadedPage}
-          onClick={() => addProductsToBasket(productID)}
+          onClick={() => addToCart(filtredOnsProducts[0])}
           className={` gap-0.5 flex items-center justify-center ${
             isActiveScroll
               ? "opacity-0 transitions-Custom fixed"

@@ -1,3 +1,4 @@
+
 import React from "react";
 
 export default function BoxesProducts({ name, img, price }) {
@@ -27,7 +28,7 @@ export default function BoxesProducts({ name, img, price }) {
           </div>
         </div>
         <div className="flex font-Dana text-zinc-800 font-bold gap-0.5">
-          <span className="text-xs ">{price.toLocaleString()}</span>
+          <span className="text-xs ">{price}</span>
           <span className="text-xs ">تومان</span>
         </div>
       </div>

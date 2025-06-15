@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
+import { CartContext } from "../../../Context/CartContext";
 
 export default function ShoppingCartDetailAndOtherSpecifications({
     addProductsToBasket,
@@ -8,6 +9,8 @@ export default function ShoppingCartDetailAndOtherSpecifications({
   setTitleForBasket,
 }) {
   useEffect(() => {}, [titleForBasket]);
+    const {addToCart} = useContext(CartContext)
+
   return (
     <div className="bg-[#f5f5f5] sm:max-w-60 w-full pr-2 pl-2 & > *:border-b-1 & > *:pb-2 & > *:border-b-slate-200 flex flex-col gap-2">
       <div className="">
@@ -104,7 +107,7 @@ export default function ShoppingCartDetailAndOtherSpecifications({
 
               <button
                 className="text-sm"
-                onClick={() => addProductsToBasket(filtredOnsProducts[0].id)}
+                onClick={() => addToCart(filtredOnsProducts)}
               >
                 افزودن به سبد خرید
               </button>
