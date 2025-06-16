@@ -8,14 +8,10 @@ export const CartProvider = ({ children }) => {
     const storedCart = localStorage.getItem("cart");
     return storedCart ? JSON.parse(storedCart) : [];
   });
-  const [allPriceInBasket , setAllPriceInBasket] = useState(0)
+  const [allPriceInBasket, setAllPriceInBasket] = useState(0);
 
   const saveInToLocalStorage = (cart) => {
     localStorage.setItem("cart", JSON.stringify(cart));
-  };
-  const getDataInLocaleStorage = () => {
-    const localStorageData = JSON.parse(localStorage.getItem("cart"));
-    console.log(localStorageData);
   };
 
   const removeInBasket = (productID) => {
@@ -33,10 +29,7 @@ export const CartProvider = ({ children }) => {
     });
   };
 
-
   const addToCart = (product) => {
-    console.log(product);
-    
     const existing = cart.find((item) => item.id === product.id);
     const currentCount = existing ? existing.count : 0;
     toast.promise(
@@ -72,19 +65,40 @@ export const CartProvider = ({ children }) => {
   };
 
   function allPriceArrayBasket() {
-    const allPrice = cart.flatMap(item => item.price * item.count).reduce((num , acc) => acc + num ,0)
-    console.log(allPrice);
-    setAllPriceInBasket(allPrice)
-    
+    const allPrice = cart
+      .flatMap((item) => item.price * item.count)
+      .reduce((num, acc) => acc + num, 0);
+    setAllPriceInBasket(allPrice);
   }
+
+  const discountProductInBasket = (product) => {
+    setCart((prev) => {
+      let exist = prev.find((item) => item.id === product.id);
+      if (exist.count > 1) {
+        return prev.map((item) =>
+          item.id === product.id ? { ...item, count: item.count - 1 } : item
+        );
+      } else {
+        return prev.filter((item) => item.id !== product.id);
+      }
+    });
+  };
 
   useEffect(() => {
     saveInToLocalStorage(cart);
-    allPriceArrayBasket()
+    allPriceArrayBasket();
   }, [cart]);
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeInBasket , allPriceInBasket }}>
+    <CartContext.Provider
+      value={{
+        cart,
+        addToCart,
+        removeInBasket,
+        discountProductInBasket,
+        allPriceInBasket,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

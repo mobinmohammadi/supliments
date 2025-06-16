@@ -115,7 +115,7 @@ export default function SearchBoxTopBar({setIsShowLayer , closeModaleSearch , sh
             ref={loaderSearch}
             className="w-full flex-col gap-10 font-Morabba-Bold hidden absolute h-72  items-center justify-center bg-white"
           >
-            <span class="loader"></span>
+            <span className="loader"></span>
             <div className="text-center pl-5">
               در حال سرچ لطفا منتظر بمانید ....
             </div>

@@ -107,7 +107,7 @@ export default function ShoppingCartDetailAndOtherSpecifications({
 
               <button
                 className="text-sm"
-                onClick={() => addToCart(filtredOnsProducts)}
+                onClick={() => addToCart(filtredOnsProducts[0])}
               >
                 افزودن به سبد خرید
               </button>

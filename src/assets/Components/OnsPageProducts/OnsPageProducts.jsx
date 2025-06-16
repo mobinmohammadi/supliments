@@ -47,9 +47,12 @@ export default function OnsPageProducts() {
       <div className="relative top-[90px]">
         {/* <RoadMapSite
           name={nameBreadCrumb.name}
-          titleBreadCrumb={titleBreadCrumb}
+          titleBreadCrumb={t
+          itleBreadCrumb}
         /> */}
-        <OnsPageContent />
+        <div className="sm:hidden">
+          <OnsPageContent />
+        </div>
         <SliderProducts title="محصولات مرتبط" />
         <Footer />
       </div>

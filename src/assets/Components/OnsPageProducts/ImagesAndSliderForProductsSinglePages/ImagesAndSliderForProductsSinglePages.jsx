@@ -106,8 +106,8 @@ export default function ImagesAndSliderForProductsSinglePages({
         className="justify-end pl-4  mt-10 flex & > *:rounded-md & > *:cursor-pointer gap-2 & > *:border & > *:border-slate-700 & > *:border-solid
         "
       >
-        {subImg.map((img) => (
-          <img
+        {subImg.map((img , index) => (
+          <img key={index + 1}
             onClick={() => setSrcImageProductsHandler(img)}
             className="w-18 "
             src={img}

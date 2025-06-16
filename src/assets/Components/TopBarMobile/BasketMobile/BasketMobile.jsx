@@ -6,6 +6,7 @@ export default function BasketMobile({
   setIsShowLayerModals,
   closeModalUserBasket,
   modalUserBasket,
+  isShowLayerModals
 }) {
   const { addToCart, cart , allPriceInBasket} = useContext(CartContext);
 
@@ -20,7 +21,7 @@ export default function BasketMobile({
   return (
     <div
       ref={modalUserBasket}
-      className="fixed w-72 font-Dana -left-80 h-[100vh] z-20 pt-3 shadow-2xl bg-white top-0 "
+      className={`fixed w-72 transitions-Custom ${isShowLayerModals ? "left-0": "-left-72" } font-Dana -left-80 h-[100vh] z-20 pt-3 shadow-2xl bg-white top-0 `}
     >
       <div className="flex relative  justify-between flex-col h-full pb-2">
         <svg
@@ -39,7 +40,7 @@ export default function BasketMobile({
           {cart?.length ? (
             <div className="mt-4 h-[500px] w-full overflow-y-auto">
               {cart
-                ? cart.map((item) => <BoxesForUserBaskets {...item} />)
+                ? cart.map((item , index) => <BoxesForUserBaskets key={index + 1 } item={item} />)
                 : null}
             </div>
           ) : (
