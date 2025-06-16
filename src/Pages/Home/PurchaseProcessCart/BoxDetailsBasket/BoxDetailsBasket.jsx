@@ -6,7 +6,6 @@ export default function BoxDetailsBasket() {
   const { cart, allPriceInBasket } = useContext(CartContext);
 
   const location = useLocation();
-  console.log(location.pathname);
 
   const [isPathName , setPathName] = useState("")
 

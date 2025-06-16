@@ -1,10 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { CartContext } from "../../../../../assets/Context/CartContext";
+import DetailsBoxUserForOrders from "../../DetailsBoxUserForOrders/DetailsBoxUserForOrders";
 
 export default function MainContentSecondOfTheShopping({
   isActiveDay,
   setIsActiveDay,
 }) {
+
   const { cart, allPriceInBasket } = useContext(CartContext);
 
   const days = [
@@ -14,6 +16,7 @@ export default function MainContentSecondOfTheShopping({
     { day: "شنبه", date: "30 خرداد" },
     { day: "یک‌شنبه", date: "31 خرداد" },
   ];
+
 
   return (
     <div className="sm:pb-32">
