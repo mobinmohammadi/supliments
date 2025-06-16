@@ -10,7 +10,7 @@ export default function TheFirstStepOfTheShoppingCart() {
   const { cart, allPriceInBasket } = useContext(CartContext);
 
   return (
-    <div className="flex gap-5 pb-5">
+    <div className="flex gap-5 pb-5 flex-col">
       <div className="w-full">
         <div className="bg-[#cce5ff] text-[#1a4dac] flex items-center justify-start p-2 gap-1 rounded-sm">
           <svg className="w-8 h-8">
