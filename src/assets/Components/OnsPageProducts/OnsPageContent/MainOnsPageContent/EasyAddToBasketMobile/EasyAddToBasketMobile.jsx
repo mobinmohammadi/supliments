@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function EasyAddToBasketMobile(props) {
   let {
@@ -10,6 +10,14 @@ export default function EasyAddToBasketMobile(props) {
     isStyleBtnAddToBasket,
     isShowMenuOnPage 
   } = props;
+
+  const goToBasket = useNavigate()
+  function redirectHandle() {
+    setTimeout(() => {
+      
+      goToBasket("/cart")
+    }, 3000);
+  }
   return (
     <div className="w-full flex items-center justify-center">
       <div
@@ -27,14 +35,14 @@ export default function EasyAddToBasketMobile(props) {
           } transition-all w-64 pt-3 pb-3 rounded-sm justify-center text-white font-Dana `}
         >
           {" "}
-          <Link to="/cart" className={`${isStyleBtnAddToBasket ? "hidden" : "flex"}`}>
+          <div onClick={() => redirectHandle()} className={`${isStyleBtnAddToBasket ? "hidden" : "flex"}`}>
             <div className="bg-white rounded-full p-2 top-1 absolute right-2 text-gray-900">
               <svg className="w-4  h-4">
                 <use href="#shopping-cart"></use>
               </svg>
             </div>
             <span className="text-xs">افرودن به سبد خرید</span>
-          </Link>
+          </div>
           <div
             className={`w-full h-full pt-1 pb-1 justify-center ${
               isStyleBtnAddToBasket ? "flex " : "hidden"

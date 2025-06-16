@@ -13,6 +13,7 @@ const CheckoutProgressBar = ({ currentStep }) => {
           className={`absolute bg-[#ef3f56] h-full transition-all duration-500 rounded-full`}
           style={{ width: `${progressPercent}%` }}
         ></div>
+
       </div>
       <div className="flex items-center text-center justify-center w-full mt-4">
         {steps.map((label, index) => {
@@ -32,12 +33,13 @@ const CheckoutProgressBar = ({ currentStep }) => {
                   }                   
                 `}
               >
+                
                 {isComplited ? (
-                  <svg className="w-5 h-5">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5">
                     <use href="#check"></use>
                   </svg>
                 ) : (
-                  <svg className="w-5 h-5">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5">
                     <use href={`#${svgs[index]}`}></use>
                   </svg>
                 )}
