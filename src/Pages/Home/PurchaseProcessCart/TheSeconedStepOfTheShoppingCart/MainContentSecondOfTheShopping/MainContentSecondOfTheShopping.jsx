@@ -19,7 +19,7 @@ export default function MainContentSecondOfTheShopping({
     <div className="sm:pb-32">
       <div className="flex flex-col gap-12">
         <span>مرسوله 1 از 1</span>
-        <div className="flex pr-5 gap-3 & > *:rounded-sm & > *:w-18 & > *:h-18">
+        <div className="grid grid-cols-4 sm:grid-cols-5 pr-5 gap-3 & > *:rounded-sm & > *:w-18 & > *:h-18">
           {cart.map((item) => (
             <img src={item.img} alt="" />
           ))}
