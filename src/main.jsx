@@ -10,6 +10,7 @@ import { CartProvider } from "./assets/Context/CartContext.jsx";
 import NotFoundPage from "./Pages/Home/NotFoundPage/NotFoundPage.jsx";
 import { ToastContainer } from "react-toastify";
 import PurchaseProcessCart from "./Pages/Home/PurchaseProcessCart/PurchaseProcessCart.jsx";
+import TheSeconedStepOfTheShoppingCart from "./Pages/Home/PurchaseProcessCart/TheSeconedStepOfTheShoppingCart/TheSeconedStepOfTheShoppingCart.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -26,6 +27,7 @@ createRoot(document.getElementById("root")).render(
           element={<CategurtByProducts />}
         />
         <Route path="/cart" element={<PurchaseProcessCart />} />
+        <Route path="/checkout/billingaddress" element={<TheSeconedStepOfTheShoppingCart />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </CartProvider>

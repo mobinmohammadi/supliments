@@ -5,6 +5,7 @@ import CheckoutProgressBar from "./CheckoutProgressBar/CheckoutProgressBar";
 import BradCrumbCart from "./BradCrumbCart/BradCrumbCart";
 
 export default function PurchaseProcessCart() {
+
   return (
     <div className="font-Dana">
       <TopBarMobile />

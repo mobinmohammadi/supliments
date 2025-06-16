@@ -4,7 +4,6 @@ const steps = ["سبد خرید", "اطلاعات ارسال", "پرداخت", "
 const svgs = ["user", "shopping-cart" , "credit-card" , "information-circle"];
 const CheckoutProgressBar = ({ currentStep }) => {
   const progressPercent = ((currentStep - 1) / (steps.length - 1)) * 100;
-  console.log(progressPercent);
 
   return (
     <div className="w-full px-4 ">
