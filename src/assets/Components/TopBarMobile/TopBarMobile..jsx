@@ -17,8 +17,7 @@ export default function TopBarMobile() {
 
   const modalUserBasket = useRef();
   const showDetailsSearch = useRef();
-    const btnOpenUserBasket = useRef();
-
+  const btnOpenUserBasket = useRef();
 
   const [isShowLayerModals, setIsShowLayerModals] = useState(false);
 
@@ -71,7 +70,10 @@ export default function TopBarMobile() {
                 </div>
               </div>
             </div>
-            <CartBoxDetailsPc  openModalUserbasket={openModalUserbasket} btnOpenUserBasket={btnOpenUserBasket}/>
+            <CartBoxDetailsPc
+              openModalUserbasket={openModalUserbasket}
+              btnOpenUserBasket={btnOpenUserBasket}
+            />
           </div>
           <div
             ref={btnOpenUserBasket}
@@ -79,16 +81,13 @@ export default function TopBarMobile() {
             className="relative border-1 pt-1 pb-1 flex md:hidden pr-6 pl-2 mr-2 rounded-l-sm cursor-pointer bg-rose-600 text-white rounded-r-md"
           >
             {cart?.length ? (
-              <div className="w-5 h-5 bg-zinc-700 transition-all rounded-full text-center flex justify-center items-center absolute -right-2 -top-3">
+              <div className="w-5 h-5 bg-gray-900 text-xs pt-1 transition-all rounded-full text-center flex justify-center items-center absolute -right-2 -top-3">
                 <span>{cart?.length}</span>
               </div>
             ) : null}
             <svg className="w-5 h-5">
               <use href="#shopping-cart"></use>
             </svg>
-            <span className="absolute -top-2 -right-2 bg-zinc-900 p-1 font-Dana rounded-full pr-2 pl-2 text-x text-white">
-              {cart.length}
-            </span>
           </div>
         </div>
       </div>
@@ -102,7 +101,14 @@ export default function TopBarMobile() {
         />
       </div>
 
-      <div onClick={() => setIsShowLayerModals(false)} className={isShowLayerModals ? "bg-black/30 fixed top-0  right-0 w-full h-full z-10" : ""}></div>
+      <div
+        onClick={() => setIsShowLayerModals(false)}
+        className={
+          isShowLayerModals
+            ? "bg-black/30 fixed top-0  right-0 w-full h-full z-10"
+            : ""
+        }
+      ></div>
     </div>
   );
 }

@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CartContext } from "../../../../assets/Context/CartContext";
 
 export default function MainBasketCartInUserBasket({item}) {
 
     const {id, img,name, src , price} = item
+    const {removeInBasket} = useContext(CartContext)
 
   return (
     <div className="border-1 border-slate-400 border-solid pr-2 pt-3 pb-2 pl-2 rounded-sm">
@@ -46,10 +48,10 @@ export default function MainBasketCartInUserBasket({item}) {
             </option>
           </select>
         </div>
-        <div className="pr-4 pl-4 h-6.5 flex items-center cursor-pointer hover:bg-[#e41e44] transition-all hover:text-white border-[#e41e44] border-solid rounded-sm border-1  text-[#e41e44] text-x">
-          <button className="  cursor-pointer">
+        <div onClick={() => removeInBasket(id)} className="pr-4 pl-4 h-6.5 flex items-center cursor-pointer hover:bg-[#e41e44] transition-all hover:text-white border-[#e41e44] border-solid rounded-sm border-1  text-[#e41e44] text-x">
+          <span className="  cursor-pointer">
             حذف
-          </button>
+          </span>
         </div>
       </div>
     </div>

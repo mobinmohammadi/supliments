@@ -10,14 +10,7 @@ export default function BasketMobile({
 }) {
   const { addToCart, cart , allPriceInBasket} = useContext(CartContext);
 
-  const [allPrice, setAllPrice] = useState(0);
-
-
-
-
-
-  
-
+  const [allPrice, setAllPrice] = useState(0);  
   return (
     <div
       ref={modalUserBasket}

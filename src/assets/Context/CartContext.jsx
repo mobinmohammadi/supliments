@@ -15,6 +15,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const removeInBasket = (productID) => {
+    
     setCart((prevCart) => {
       let product = prevCart.find((product) => product.id === productID);
       if (!product) return prevCart;

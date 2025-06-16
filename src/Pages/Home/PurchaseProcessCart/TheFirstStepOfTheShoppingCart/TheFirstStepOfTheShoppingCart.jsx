@@ -5,12 +5,10 @@ import MainBasketCartInUserBasket from "../MainBasketCartInUserBasket/MainBasket
 import { CartContext } from "../../../../assets/Context/CartContext";
 
 export default function TheFirstStepOfTheShoppingCart() {
-
-    const { cart } = useContext(CartContext)
-    
+  const { cart } = useContext(CartContext);
 
   return (
-    <div className="pb-10">
+    <div className="pb-5">
       <div className="bg-[#cce5ff] text-[#1a4dac] flex items-center justify-start p-2 gap-1 rounded-sm">
         <svg className="w-8 h-8">
           <use href="#information-circle"></use>
@@ -19,18 +17,21 @@ export default function TheFirstStepOfTheShoppingCart() {
           افزودن کالا به سبد خرید شما به معنی رزرو کالا برای شما نمی باشد. لذا
           باید مراحل بعدی خرید خود را تکمیل کنید.
         </span>
-
       </div>
       <div className="flex  items-center  pt-5 pb-5">
         <span className=" w-20  text-xs sm:text-sm mt-[2px]">سبد خرید</span>
         <span className="w-full h-[2px] bg-slate-400 rounded-full inline-block"></span>
       </div>
-      <div className="flex gap-5 flex-col pb-10 border-b-1 border-b-slate-400 border-solid">
-        {cart.map(item => (
-            <MainBasketCartInUserBasket item={item}/>
+      <div className="flex gap-5 flex-col pb-6 border-b-1 border-b-slate-400 border-solid">
+        {cart.length ? (
+          cart.map((item) => <MainBasketCartInUserBasket item={item} />)
+        ) : (
+          <div className="flex w-full items-center justify-center">
 
-        ))}
-      {/* <MainBasketCartInUserBasket/> */}
+            <span className=" ">سبد خرید شما خالی است ):</span>
+          </div>
+        )}
+        {/* <MainBasketCartInUserBasket/> */}
       </div>
     </div>
   );
