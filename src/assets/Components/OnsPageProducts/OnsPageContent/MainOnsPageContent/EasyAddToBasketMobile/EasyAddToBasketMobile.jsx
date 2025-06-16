@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function EasyAddToBasketMobile(props) {
   let {
@@ -26,14 +27,14 @@ export default function EasyAddToBasketMobile(props) {
           } transition-all w-64 pt-3 pb-3 rounded-sm justify-center text-white font-Dana `}
         >
           {" "}
-          <div className={`${isStyleBtnAddToBasket ? "hidden" : "flex"}`}>
+          <Link to="/cart" className={`${isStyleBtnAddToBasket ? "hidden" : "flex"}`}>
             <div className="bg-white rounded-full p-2 top-1 absolute right-2 text-gray-900">
               <svg className="w-4  h-4">
                 <use href="#shopping-cart"></use>
               </svg>
             </div>
             <span className="text-xs">افرودن به سبد خرید</span>
-          </div>
+          </Link>
           <div
             className={`w-full h-full pt-1 pb-1 justify-center ${
               isStyleBtnAddToBasket ? "flex " : "hidden"
