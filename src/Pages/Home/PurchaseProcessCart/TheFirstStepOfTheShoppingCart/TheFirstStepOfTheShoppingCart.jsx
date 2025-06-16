@@ -1,25 +1,36 @@
-import React from "react";
+import React, { useContext } from "react";
 import TopBarMobile from "../../../../assets/Components/TopBarMobile/TopBarMobile.";
-import CheckoutProgressBar from "./CheckoutProgressBar";
+import CheckoutProgressBar from "../CheckoutProgressBar/CheckoutProgressBar";
+import MainBasketCartInUserBasket from "../MainBasketCartInUserBasket/MainBasketCartInUserBasket";
+import { CartContext } from "../../../../assets/Context/CartContext";
 
 export default function TheFirstStepOfTheShoppingCart() {
-    const step = ["سبد خرید" , "اطلاعات ارسال", "پرداخت" , "اتمام خرید و ارسال"]
+
+    const { cart } = useContext(CartContext)
+    
 
   return (
-    <div className="">
-      <TopBarMobile />
-      <div className="pt-22 flex flex-col gap-7 text-sm font-Dana-Bold container-custom pr-3 pl-3">
-        <div className="flex gap-2 pt-2">
-          <span>خانه</span>
-          <span>/</span>
-          <span className="border-b border-b-gray-900 pb-1 rounded-xs">
-            سبد خرید شما
-          </span>
-        </div>
-        
+    <div className="pb-10">
+      <div className="bg-[#cce5ff] text-[#1a4dac] flex items-center justify-start p-2 gap-1 rounded-sm">
+        <svg className="w-8 h-8">
+          <use href="#information-circle"></use>
+        </svg>
+        <span className="text-x">
+          افزودن کالا به سبد خرید شما به معنی رزرو کالا برای شما نمی باشد. لذا
+          باید مراحل بعدی خرید خود را تکمیل کنید.
+        </span>
 
-        <CheckoutProgressBar currentStep={4}/>
-        
+      </div>
+      <div className="flex  items-center  pt-5 pb-5">
+        <span className=" w-20  text-xs sm:text-sm mt-[2px]">سبد خرید</span>
+        <span className="w-full h-[2px] bg-slate-400 rounded-full inline-block"></span>
+      </div>
+      <div className="flex gap-5 flex-col pb-10 border-b-1 border-b-slate-400 border-solid">
+        {cart.map(item => (
+            <MainBasketCartInUserBasket item={item}/>
+
+        ))}
+      {/* <MainBasketCartInUserBasket/> */}
       </div>
     </div>
   );
