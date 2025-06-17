@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 export const CartContext = createContext();
@@ -8,6 +9,8 @@ export const CartProvider = ({ children }) => {
     const storedCart = localStorage.getItem("cart");
     return storedCart ? JSON.parse(storedCart) : [];
   });
+
+  const cartUser = useNavigate()
   const [allPriceInBasket, setAllPriceInBasket] = useState(0);
 
   const saveInToLocalStorage = (cart) => {
@@ -49,6 +52,10 @@ export const CartProvider = ({ children }) => {
                 return [...prevCart, { ...product, count: 1 }];
               }
             });
+            setTimeout(() => {
+              
+              cartUser("/cart")
+            }, 2000);
             resolve();
           } catch (error) {
             reject();

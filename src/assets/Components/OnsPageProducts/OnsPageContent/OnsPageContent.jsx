@@ -152,15 +152,16 @@ export default function OnsPageContent({}) {
           isShowSliderMoreOnOneProducts={isShowSliderMoreOnOneProducts}
         />
       </div>
-
-      <EasyAddToBasketMobile
-        btnAferLoadedPage={btnAferLoadedPage}
-        isStyleBtnAddToBasket={isStyleBtnAddToBasket}
-        isShowMenuOnPage ={isShowMenuOnPage }
-        isActiveScroll={isActiveScroll}
-        styleAndAddToCartHandler={styleAndAddToCartHandler}
-        setIsShowMenuOnPage={setIsShowMenuOnPage}
-      />
+      <div className="sm:hidden">
+        <EasyAddToBasketMobile
+          btnAferLoadedPage={btnAferLoadedPage}
+          isStyleBtnAddToBasket={isStyleBtnAddToBasket}
+          isShowMenuOnPage={isShowMenuOnPage}
+          isActiveScroll={isActiveScroll}
+          styleAndAddToCartHandler={styleAndAddToCartHandler}
+          setIsShowMenuOnPage={setIsShowMenuOnPage}
+        />
+      </div>
     </div>
   );
 }

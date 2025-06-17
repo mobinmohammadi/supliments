@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function EasyAddToBasketMobile(props) {
   let {
@@ -74,42 +74,42 @@ export default function EasyAddToBasketMobile(props) {
           >
             <div className="absolute  rounded-sm left-0 w-40 bottom-[140%] bg-gray-900 ">
               <div className="flex flex-col items-start pr-3 & > *: & > *:gap-1 & > *:flex  & > *:justify-center  text-xs font-Dana pt-2 pb-2 gap-5 text-white">
-                <div className="">
+                <Link to="/">
                   <svg className="w-4 h-4">
                     <use href="#home"></use>
                   </svg>
                   <span>خانه</span>
-                </div>
-                <div className="">
+                </Link>
+                <Link to="/myaccount">
                   <svg className="w-4 h-4">
                     <use href="#user"></use>
                   </svg>
                   <span className="">پروفایل</span>
-                </div>
-                <div className="">
+                </Link>
+                {/* <div className="">
                   <svg className="w-4 h-4">
                     <use href="#search-normal"></use>
                   </svg>
                   <span className="">جستوجو</span>
-                </div>
-                <div className="">
+                </div> */}
+                <Link to="/categuryByProducts/protein">
                   <svg className="w-4 h-4">
                     <use href="#adjustments-horizontal"></use>
                   </svg>
                   <span>دسته بندی ها</span>
-                </div>
-                <div className="">
+                </Link>
+                <Link to="/cart">
                   <svg className="w-4 h-4">
                     <use href="#shopping-bag"></use>
                   </svg>
                   <span>سبد خرید من</span>
-                </div>
-                <div className="">
+                </Link>
+                <Link to="/aboute">
                   <svg className="w-4 h-4 rotate-[260deg]">
                     <use href="#phone-arrow-down-left"></use>
                   </svg>
                   <span>تماس</span>
-                </div>
+                </Link>
               </div>
             </div>
             <div className="w-5 h-5 bg-gray-900 absolute bottom-[135%] left-1 rounded-sm rotate-45"></div>

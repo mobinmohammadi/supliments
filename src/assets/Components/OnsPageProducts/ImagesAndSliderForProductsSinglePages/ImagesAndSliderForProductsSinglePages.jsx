@@ -90,9 +90,7 @@ export default function ImagesAndSliderForProductsSinglePages({
             src={srcProductStatus}
             alt=""
           />
-          <span className="group-hover:opacity-100 group-hover:visible invisible opacity-0 group-hover:bottom-[85%] transitions-Custom  bg-zinc-500 text-white font-bold shadow-2xl w-full text-sm rounded-sm pt-2 pb-2 flex justify-center bottom-full absolute">
-            برای زوم بیشتر روی عکس کلیک کنید :)
-          </span>
+
           <span
             ref={textForZoomProduct}
             className="opacity-0 invisible absolute -z-10 bottom-full"

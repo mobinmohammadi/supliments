@@ -2,14 +2,15 @@ import React, { useContext, useRef } from "react";
 import { CartContext } from "../../../Context/CartContext";
 
 export default function BoxesForUserBaskets({item}) {
-
+  
+  
   if(!item) return null
 
   let { name, img, price, count } = item
   const deleteBtn = useRef(null)
   const acceptForDelete = useRef(null)
   const cancelForDelete = useRef(null)
-      const {removeInBasket} = useContext(CartContext)
+  const {removeInBasket} = useContext(CartContext)
   
 
   function deleteBtnForUserBasketUser() {

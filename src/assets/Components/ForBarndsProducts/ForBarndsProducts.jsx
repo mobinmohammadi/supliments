@@ -8,7 +8,6 @@ import BoxesProducts from "./BoxesProducts/BoxesProducts";
 
 export default function ForBarndsProducts() {
   const params = useParams().BrandName;
-  console.log(params);
 
   const filterProductsByBrand = allBrandLogo.filter(
     (item) => item.name == params

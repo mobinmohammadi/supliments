@@ -50,7 +50,7 @@ export default function OnsPageProducts() {
           titleBreadCrumb={t
           itleBreadCrumb}
         /> */}
-        <div className="sm:hidden">
+        <div className="">
           <OnsPageContent />
         </div>
         <SliderProducts title="محصولات مرتبط" />

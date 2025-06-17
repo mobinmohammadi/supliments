@@ -11,6 +11,8 @@ import NotFoundPage from "./Pages/Home/NotFoundPage/NotFoundPage.jsx";
 import { ToastContainer } from "react-toastify";
 import PurchaseProcessCart from "./Pages/Home/PurchaseProcessCart/PurchaseProcessCart.jsx";
 import TheSeconedStepOfTheShoppingCart from "./Pages/Home/PurchaseProcessCart/TheSeconedStepOfTheShoppingCart/TheSeconedStepOfTheShoppingCart.jsx";
+import Panel from "./Pages/Home/Panel/Panel.jsx";
+import Login from "./Pages/Home/Login/Login.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -27,10 +29,15 @@ createRoot(document.getElementById("root")).render(
           element={<CategurtByProducts />}
         />
         <Route path="/cart" element={<PurchaseProcessCart />} />
-        <Route path="/checkout/billingaddress" element={<TheSeconedStepOfTheShoppingCart />} />
+        <Route
+          path="/checkout/billingaddress"
+          element={<TheSeconedStepOfTheShoppingCart />}
+        />
+        <Route path="/myaccount" element={<Panel />} />
+        <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </CartProvider>
-    <ToastContainer autoClose={2000} position="top-left" />
+    <ToastContainer autoClose={2000} position="top-right" />
   </BrowserRouter>
 );

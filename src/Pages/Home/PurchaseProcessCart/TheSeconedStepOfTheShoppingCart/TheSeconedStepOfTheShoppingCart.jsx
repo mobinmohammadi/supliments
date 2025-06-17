@@ -27,6 +27,15 @@ export default function TheSeconedStepOfTheShoppingCart() {
 
   const [isActiveAddreas, setActiveAddreas] = useState("");
 
+  const removeAddreas = (addreas) => {
+    console.log(addreas);
+    const dataForDelete = JSON.parse(localStorage.getItem("userOrders"));
+    console.log(dataForDelete);
+
+    const removeAddreas = dataForDelete.filter((item) => item.id !== addreas);
+    localStorage.setItem("userOrders", JSON.stringify(removeAddreas));
+  };
+
   return (
     <div className="w-full">
       <TopBarMobile />
@@ -43,6 +52,7 @@ export default function TheSeconedStepOfTheShoppingCart() {
             </div>
             {detailUserInLocalStorage.map((item) => (
               <BoxesForAddreasUser
+                removeAddreas={removeAddreas}
                 setActiveAddreas={setActiveAddreas}
                 isActiveAddreas={isActiveAddreas}
                 item={item}
@@ -65,6 +75,7 @@ export default function TheSeconedStepOfTheShoppingCart() {
               <span>ایجاد آدرس جدید</span>
             </div>
             <MainContentSecondOfTheShopping
+              detailUserInLocalStorage={detailUserInLocalStorage}
               isActiveDay={isActiveDay}
               setIsActiveDay={setIsActiveDay}
             />

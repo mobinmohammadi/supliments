@@ -1,12 +1,12 @@
 import React, { useContext, useRef } from "react";
 import BoxesForUserBaskets from "../BoxesForUserBaskets/BoxesForUserBaskets";
 import { CartContext } from "../../../Context/CartContext";
+import { Link } from "react-router-dom";
 
 export default function CartBoxDetailsPc(props) {
   const { cart } = useContext(CartContext);
 
-  const modalUserBasket = useRef();
-
+  
   
 
 
@@ -19,7 +19,7 @@ export default function CartBoxDetailsPc(props) {
         <div className=" text-gray-900 pt-2  shadow-2xl w-full  top-full h-full  ">
           <div className="flex justify-between border-b-1 pb-2 border-solid border-solid-200">
             <span className="text-xs pr-2">سبد خرید شما</span>
-            {CartContext.length ? (
+            {cart.length ? (
               <span className="text-x pl-2">
                 {cart.length} محصول در سبد خرید شما
               </span>
@@ -30,9 +30,10 @@ export default function CartBoxDetailsPc(props) {
               cart.length > 2 ? "overflow-y-scroll h-[300px]" : ""
             }`}
           >
-            {cart.length ? (
+            {cart?.length ? (
               cart.map((item) => (
-                <BoxesForUserBaskets key={item.id} {...item} />
+                // <span>سلا و دررود</span>
+                <BoxesForUserBaskets key={item.id} item={item} />
               ))
             ) : (
               <span className="text-center pt-2 pb-2 font-Morabba-Bold text-sm border-dotted border-b-sky-700 border-b-2">
@@ -42,11 +43,11 @@ export default function CartBoxDetailsPc(props) {
           </div>
         </div>
         {cart.length ? (
-          <div className=" w-full">
+          <Link to="/cart" className=" w-full">
             <span className="bg-green-700 w-full block pt-1 pb-1 text-center text-white">
               تسویه حساب
             </span>
-          </div>
+          </Link>
         ) : null}
       </div>
       <svg

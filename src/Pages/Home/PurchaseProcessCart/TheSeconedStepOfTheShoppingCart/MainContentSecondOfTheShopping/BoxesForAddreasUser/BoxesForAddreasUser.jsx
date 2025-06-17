@@ -4,6 +4,7 @@ export default function BoxesForAddreasUser({
   setDetailsBoxUserForOrders,
   setActiveAddreas,
   isActiveAddreas,
+  removeAddreas,
   editOnUserOrders,
   item,
 }) {
@@ -38,7 +39,7 @@ export default function BoxesForAddreasUser({
             <span onClick={() => editOnUserOrders(item.id)}>
               اصلاح این آدرس
             </span>
-            <span>حذف این آدرس</span>
+            <span onClick={() => removeAddreas(item.id)}>حذف این آدرس</span>
           </div>
         </div>
         {isActiveAddreas == item.id ? (

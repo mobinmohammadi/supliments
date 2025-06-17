@@ -12,6 +12,7 @@ import SearchBoxTopBar from "./SearchBoxTopBar/SearchBoxTopBar.jsx";
 import ItemInBasketPc from "../ItemInBasketPc/ItemInBasketPc.jsx";
 import BoxesForUserBaskets from "./BoxesForUserBaskets/BoxesForUserBaskets.jsx";
 import CartBoxDetailsPc from "./CartBoxDetailsPc/CartBoxDetailsPc.jsx";
+import { Link } from "react-router-dom";
 export default function TopBarMobile() {
   const { addToCart, cart, allPriceInBasket } = useContext(CartContext);
 
@@ -64,9 +65,9 @@ export default function TopBarMobile() {
                   <svg className=" w-5 h-5 ">
                     <use href="#user"></use>
                   </svg>
-                  <span className=" text-sm pr-2 pl-2 font-Dana ">
+                  <Link to="/login" className=" text-sm pr-2 pl-2 font-Dana ">
                     ورود | ثبت نام
-                  </span>
+                  </Link>
                 </div>
               </div>
             </div>

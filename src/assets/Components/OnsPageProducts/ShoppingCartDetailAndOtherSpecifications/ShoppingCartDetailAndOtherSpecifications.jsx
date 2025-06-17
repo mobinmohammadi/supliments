@@ -106,7 +106,7 @@ export default function ShoppingCartDetailAndOtherSpecifications({
               </svg>
 
               <button
-                className="text-sm"
+                className="text-sm cursor-pointer"
                 onClick={() => addToCart(filtredOnsProducts[0])}
               >
                 افزودن به سبد خرید
