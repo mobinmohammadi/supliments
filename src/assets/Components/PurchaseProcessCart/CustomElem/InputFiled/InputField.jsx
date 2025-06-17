@@ -3,6 +3,7 @@ import { input } from "framer-motion/client";
 import React from "react";
 
 export default function InputField({
+  dataForEdit,
   item,
   formik,
   handleChangeFormik,

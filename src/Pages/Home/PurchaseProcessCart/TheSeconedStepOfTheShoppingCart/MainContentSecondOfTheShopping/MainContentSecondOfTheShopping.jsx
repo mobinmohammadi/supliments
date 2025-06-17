@@ -16,7 +16,7 @@ export default function MainContentSecondOfTheShopping({
     { day: "شنبه", date: "30 خرداد" },
     { day: "یک‌شنبه", date: "31 خرداد" },
   ];
-
+  
 
   return (
     <div className="sm:pb-32">

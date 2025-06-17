@@ -1,9 +1,8 @@
 import React from "react";
 
-export default function BoxesForAddreasUser({setDetailsBoxUserForOrders , detailUserInLocalStorage}) {
+export default function BoxesForAddreasUser({setDetailsBoxUserForOrders ,editOnUserOrders, item}) {
 
 
-    console.log(detailUserInLocalStorage);
     
   return (
     <div className="bg-white rounded-md p-5 pr-6 sm:pr-10 relative border-r-12 border-r-red-800 ">
@@ -12,19 +11,19 @@ export default function BoxesForAddreasUser({setDetailsBoxUserForOrders , detail
           <div className="flex flex-col gap-2 text-xs font-Dana">
             <div className="">
               <span>گیرنده :</span>
-              <span>{detailUserInLocalStorage.firstname }{detailUserInLocalStorage.lastname}</span>
+              <span>{item.firstname }{item.lastname}</span>
             </div>
             <div className="">
               <span>شماره تماس :</span>
-              <span>{detailUserInLocalStorage.phone}</span>
+              <span>{item.phone}</span>
             </div>
             <div className="max-w-44 leading-5">
               <span>استان :</span>
-              <span>{detailUserInLocalStorage.province}-{detailUserInLocalStorage.city}-{detailUserInLocalStorage.postaladdress}</span>
-            </div>
+              <span>{item.province}-{item.city}-{item.postaladdress}</span>
+            </div>item
           </div>
           <div className="flex gap-3 text-xs text-red-700 & > *:hover:border-b-2 & > *:border-dashed & > *:pb-2 & > *:cursor-pointer">
-            <span onClick={() => setDetailsBoxUserForOrders(true)}>اصلاح این آدرس</span>
+            <span onClick={() => editOnUserOrders(item.id)}>اصلاح این آدرس</span>
             <span>حذف این آدرس</span>
           </div>
         </div>
