@@ -10,8 +10,7 @@ export default function InputField({
   handleChangeFormik,
   error,
 }) {
-  console.log(formik.values);
-  console.log(name);
+
   
 
   

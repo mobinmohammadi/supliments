@@ -20,6 +20,7 @@ export default function DetailsBoxUserForOrders({
 
   useEffect(() => {
     if (dataForEdit?.province) {
+        
       setSelectedProvince(dataForEdit.province);
       const foundProvince = provincesData.find(
         (item) => item.name === dataForEdit.province
@@ -172,10 +173,6 @@ export default function DetailsBoxUserForOrders({
         setTimeout(() => {
           try {
             setDetailsBoxUserForOrders(false);
-            formik.values.firstname = ""
-            formik.values.lastname = ""
-            formik.values.city = ""
-            formik.values.phone = ""
             resolve();
           } catch {
             reject();

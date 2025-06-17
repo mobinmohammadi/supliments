@@ -24,6 +24,9 @@ export default function TheSeconedStepOfTheShoppingCart() {
     setDetailsBoxUserForOrders(true);
   };
   const [isActiveDay, setIsActiveDay] = useState("سه شنبه");
+
+  const [isActiveAddreas, setActiveAddreas] = useState("");
+
   return (
     <div className="w-full">
       <TopBarMobile />
@@ -40,6 +43,8 @@ export default function TheSeconedStepOfTheShoppingCart() {
             </div>
             {detailUserInLocalStorage.map((item) => (
               <BoxesForAddreasUser
+                setActiveAddreas={setActiveAddreas}
+                isActiveAddreas={isActiveAddreas}
                 item={item}
                 editOnUserOrders={editOnUserOrders}
                 detailUserInLocalStorage={detailUserInLocalStorage}
@@ -50,7 +55,7 @@ export default function TheSeconedStepOfTheShoppingCart() {
             <div
               onClick={() => {
                 setDetailsBoxUserForOrders(true);
-                setDataForEdit(null)
+                setDataForEdit(null);
               }}
               className="border-4 flex gap-1 cursor-pointer  items-center justify-center text-slate-400 h-14  border-slate-300 border-dashed"
             >
