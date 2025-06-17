@@ -5,14 +5,17 @@ import SelectFiled from "../../../../assets/Components/PurchaseProcessCart/Custo
 import provincesData from "./../../../../provincesData.json";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { toast } from "react-toastify";
 
 export default function DetailsBoxUserForOrders({
   setDetailsBoxUserForOrders,
   isDetailsBoxUserForOrders,
+  detailUserInLocalStorage
 }) {
   const [selectedProvince, setsSelectedProvince] = useState("");
   const [selectedCity, setSelectedCity] = useState("");
   const [allCitiesProvinces, setAllCitiesProvinces] = useState([]);
+
 
   const formFields = [
     {
@@ -147,13 +150,45 @@ export default function DetailsBoxUserForOrders({
     formik.setFieldValue("city", value);
   };
 
+  const handelDetailsUser = () => {
+    const forLocaleStorage = {
+      firstname: formik.values.firstname,
+      lastname: formik.values.lastname,
+      city: formik.values.city,
+      province: formik.values.province,
+      postaladdress: formik.values.postaladdress,
+      postalcode: formik.values.postalcode,
+      phone : formik.values.phone,
+    };
+    localStorage.setItem("userOrders", JSON.stringify(forLocaleStorage));
+
+    toast.promise(
+      new Promise((resolve, reject) => {
+        setTimeout(() => {
+          try {
+            setDetailsBoxUserForOrders(false);
+            resolve();
+          } catch (error) {
+            reject();
+          }
+        }, 2000);
+      }),
+      {
+        pending: "در حال ثبت اطلاعات...",
+        success: "اطلاعات با موفقیت ثبت شد ✅",
+        error: "خطا در ثبت اطلاعات ❌",
+      }
+    );
+  };
+
   return (
     <div
       className={`fixed ${
         isDetailsBoxUserForOrders
           ? "opacity-100 visible transition-Custom"
           : "opacity-0 invisible"
-      } transition-all overflow-y-scroll pb-5 bg-white w-full h-full top-0 z-20 `}
+      } transition-all overflow-y-scroll pb-5 bg-white
+      w-full h-full top-0 z-20 `}
     >
       <div className="flex items-center justify-between p-5 text-xs border-b-slate-300 border-solid border-b-1">
         <span className="text-sm">افزودن آدرس جدید</span>
@@ -244,7 +279,10 @@ export default function DetailsBoxUserForOrders({
               <>
                 <TextAreaField
                   item={item}
-                  error={formik.touched[item.nameFormik] && formik.errors[item.nameFormik]}
+                  error={
+                    formik.touched[item.nameFormik] &&
+                    formik.errors[item.nameFormik]
+                  }
                   handleChangeFormik={formik.handleChange}
                   formik={formik.initialValues}
                 />
@@ -252,7 +290,10 @@ export default function DetailsBoxUserForOrders({
             );
           }
         })}
-        <div onClick={() => setDetailsBoxUserForOrders(false)} className=" text-white font-Dana flex justify-end">
+        <div
+          onClick={() => handelDetailsUser(false)}
+          className=" text-white font-Dana flex justify-end"
+        >
           <button
             type="submit"
             className="bg-[#ef3f56] pt-1 pb-1 rounded-sm pr-3 pl-3"

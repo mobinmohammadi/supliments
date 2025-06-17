@@ -10,6 +10,8 @@ import BoxesForAddreasUser from "./MainContentSecondOfTheShopping/BoxesForAddrea
 export default function TheSeconedStepOfTheShoppingCart() {
   const [isDetailsBoxUserForOrders, setDetailsBoxUserForOrders] =
     useState(false);
+      const detailUserInLocalStorage = JSON.parse(localStorage.getItem("userOrders"))
+
   const [isActiveDay, setIsActiveDay] = useState("سه شنبه");
   return (
     <div className="w-full">
@@ -25,7 +27,7 @@ export default function TheSeconedStepOfTheShoppingCart() {
               </span>
               <span className="w-full h-[2px] bg-slate-400 rounded-full inline-block"></span>
             </div>
-            <BoxesForAddreasUser />
+            <BoxesForAddreasUser detailUserInLocalStorage={detailUserInLocalStorage} setDetailsBoxUserForOrders={setDetailsBoxUserForOrders} />
 
             <div
               onClick={() => setDetailsBoxUserForOrders(true)}
@@ -47,6 +49,7 @@ export default function TheSeconedStepOfTheShoppingCart() {
       {isDetailsBoxUserForOrders ? (
         <div className="">
           <DetailsBoxUserForOrders
+          detailUserInLocalStorage={detailUserInLocalStorage}
             setDetailsBoxUserForOrders={setDetailsBoxUserForOrders}
             isDetailsBoxUserForOrders={isDetailsBoxUserForOrders}
           />
