@@ -5,6 +5,7 @@ import CheckoutProgressBar from "../CheckoutProgressBar/CheckoutProgressBar";
 import BoxDetailsBasket from "../BoxDetailsBasket/BoxDetailsBasket";
 import MainContentSecondOfTheShopping from "./MainContentSecondOfTheShopping/MainContentSecondOfTheShopping";
 import DetailsBoxUserForOrders from "../DetailsBoxUserForOrders/DetailsBoxUserForOrders";
+import BoxesForAddreasUser from "./MainContentSecondOfTheShopping/BoxesForAddreasUser/BoxesForAddreasUser";
 
 export default function TheSeconedStepOfTheShoppingCart() {
   const [isDetailsBoxUserForOrders, setDetailsBoxUserForOrders] =
@@ -19,11 +20,13 @@ export default function TheSeconedStepOfTheShoppingCart() {
         <div className="flex justify-between flex-col sm:flex-row gap-5">
           <div className="flex w-full flex-col gap-5 ">
             <div className="flex w-full items-center justify-between h-1 ">
-              <span className=" w-58  text-xs sm:text-sm ">
+              <span className=" w-78  text-xs sm:text-sm ">
                 انتخاب آدرس تحویل سفارش
               </span>
               <span className="w-full h-[2px] bg-slate-400 rounded-full inline-block"></span>
             </div>
+            <BoxesForAddreasUser />
+
             <div
               onClick={() => setDetailsBoxUserForOrders(true)}
               className="border-4 flex gap-1 cursor-pointer  items-center justify-center text-slate-400 h-14  border-slate-300 border-dashed"
