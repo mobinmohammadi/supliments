@@ -8,17 +8,20 @@ import DetailsBoxUserForOrders from "../DetailsBoxUserForOrders/DetailsBoxUserFo
 import BoxesForAddreasUser from "./MainContentSecondOfTheShopping/BoxesForAddreasUser/BoxesForAddreasUser";
 
 export default function TheSeconedStepOfTheShoppingCart() {
-  const [isDetailsBoxUserForOrders, setDetailsBoxUserForOrders] = useState(false);
-  const detailUserInLocalStorage = JSON.parse(localStorage.getItem("userOrders")) || [];
-  const [dataForEdit , setDataForEdit] = useState([])
-
+  const [isDetailsBoxUserForOrders, setDetailsBoxUserForOrders] =
+    useState(false);
+  const detailUserInLocalStorage =
+    JSON.parse(localStorage.getItem("userOrders")) || [];
+  const [dataForEdit, setDataForEdit] = useState([]);
 
   const editOnUserOrders = (userDataID) => {
     const convertLocalStorage = JSON.parse(localStorage.getItem("userOrders"));
     const userD = convertLocalStorage.find((item) => item.id == userDataID);
-    setDataForEdit(userD)
-    
-    setDetailsBoxUserForOrders(true)
+    console.log(userD);
+
+    setDataForEdit(userD);
+
+    setDetailsBoxUserForOrders(true);
   };
   const [isActiveDay, setIsActiveDay] = useState("سه شنبه");
   return (
@@ -45,7 +48,10 @@ export default function TheSeconedStepOfTheShoppingCart() {
             ))}
 
             <div
-              onClick={() => setDetailsBoxUserForOrders(true)}
+              onClick={() => {
+                setDetailsBoxUserForOrders(true);
+                setDataForEdit(null)
+              }}
               className="border-4 flex gap-1 cursor-pointer  items-center justify-center text-slate-400 h-14  border-slate-300 border-dashed"
             >
               <svg className="w-6 h-6">

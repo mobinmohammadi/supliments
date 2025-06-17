@@ -24,10 +24,12 @@ export default function DetailsBoxUserForOrders({
       const foundProvince = provincesData.find(
         (item) => item.name === dataForEdit.province
       );
+      
       if (foundProvince) {
         setAllCitiesProvinces(foundProvince.cities);
       }
     }
+    
   }, [dataForEdit]);
 
   const formFields = [
@@ -130,7 +132,7 @@ export default function DetailsBoxUserForOrders({
       city: dataForEdit?.city || "",
     },
     validationSchema: validationsForm,
-    enableReinitialize: true,
+    enableReinitialize: false,
     onSubmit: handleDetailsUser,
   });
 
@@ -170,6 +172,10 @@ export default function DetailsBoxUserForOrders({
         setTimeout(() => {
           try {
             setDetailsBoxUserForOrders(false);
+            formik.values.firstname = ""
+            formik.values.lastname = ""
+            formik.values.city = ""
+            formik.values.phone = ""
             resolve();
           } catch {
             reject();
@@ -204,6 +210,7 @@ export default function DetailsBoxUserForOrders({
             return (
               <InputField
                 key={index}
+                name={item.nameFormik}
                 item={item}
                 formik={formik.values}
                 handleChangeFormik={formik.handleChange}

@@ -10,7 +10,7 @@ export default function TextAreaField({ item,formik,error, handleChangeFormik })
       </div>
       <div className="pt-2 pb-2 pr-1 bg-slate-100 rounded-sm">
         <textarea
-          value={formik.nameFormik}
+          value={formik[item.nameFormik] || ""}
           name={item.nameFormik}
           onChange={handleChangeFormik}
           type="text"

@@ -11,7 +11,7 @@ export default function BoxesForAddreasUser({setDetailsBoxUserForOrders ,editOnU
           <div className="flex flex-col gap-2 text-xs font-Dana">
             <div className="">
               <span>گیرنده :</span>
-              <span>{item.firstname }{item.lastname}</span>
+              <span>{item.firstname }-{item.lastname}</span>
             </div>
             <div className="">
               <span>شماره تماس :</span>
@@ -20,7 +20,7 @@ export default function BoxesForAddreasUser({setDetailsBoxUserForOrders ,editOnU
             <div className="max-w-44 leading-5">
               <span>استان :</span>
               <span>{item.province}-{item.city}-{item.postaladdress}</span>
-            </div>item
+            </div>
           </div>
           <div className="flex gap-3 text-xs text-red-700 & > *:hover:border-b-2 & > *:border-dashed & > *:pb-2 & > *:cursor-pointer">
             <span onClick={() => editOnUserOrders(item.id)}>اصلاح این آدرس</span>

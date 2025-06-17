@@ -6,10 +6,17 @@ export default function InputField({
   dataForEdit,
   item,
   formik,
+  name,
   handleChangeFormik,
   error,
 }) {
+  console.log(formik.values);
+  console.log(name);
+  
 
+  
+  // console.log("formik ==> " , formik);
+  
   return (
     <div className="flex gap-2 flex-col">
       <div className="flex gap-1">
@@ -19,7 +26,7 @@ export default function InputField({
       <div className="pt-1 text-xs pb-2 pr-1 bg-slate-100 rounded-sm">
         <input
           name={item.nameFormik}
-          value={formik.nameFormik}
+          value={formik[item.nameFormik] || ""}
         //   id={formik.nameFormik}
           onChange={handleChangeFormik}
           type="text"
