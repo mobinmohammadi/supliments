@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../../../assets/Context/CartContext";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export default function BoxDetailsBasket() {
   const { cart, allPriceInBasket } = useContext(CartContext);
@@ -8,18 +8,21 @@ export default function BoxDetailsBasket() {
   const location = useLocation();
 
   const [isPathName , setPathName] = useState("")
+  const goto = useNavigate()
+  const pathName = location.pathname
 
   useEffect(() => {
     if(location.pathname == "/checkout/billingaddress"){
       setPathName(true)
     }
+    // else if()
 
   },[])
 
   
 
   return (
-    <div className="w-full sm:w-[500px] h-[400px] bg-white flex p-4 font-Dana flex-col gap-5 text-center">
+    <div className="w-full sm:w-[400px] h-[400px] bg-white flex p-4 font-Dana flex-col gap-5 text-center">
       <div className="flex justify-between w-full border-b-1 border-b-[#ef3f56]">
         <div className="flex flex-col gap-3 pb-3 w-full">
           <div className="flex justify-between w-full">
@@ -53,7 +56,7 @@ export default function BoxDetailsBasket() {
           </span>
         </div>
         <Link
-          to="/checkout/billingaddress"
+          to={`${pathName == "/cart" ? "billingaddress" : "mony" }`}
           className="bg-red-500 group cursor-pointer relative text-white pt-3 pb-3 rounded-sm"
         >
           <span className="">مرحله بعد </span>

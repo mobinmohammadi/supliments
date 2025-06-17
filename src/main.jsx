@@ -13,6 +13,7 @@ import PurchaseProcessCart from "./Pages/Home/PurchaseProcessCart/PurchaseProces
 import TheSeconedStepOfTheShoppingCart from "./Pages/Home/PurchaseProcessCart/TheSeconedStepOfTheShoppingCart/TheSeconedStepOfTheShoppingCart.jsx";
 import Panel from "./Pages/Home/Panel/Panel.jsx";
 import Login from "./Pages/Home/Login/Login.jsx";
+import TheMonyStepOfTheShoppingCart from "./Pages/Home/PurchaseProcessCart/TheMonyStepOfTheShoppingCart/TheMonyStepOfTheShoppingCart.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -30,10 +31,10 @@ createRoot(document.getElementById("root")).render(
         />
         <Route path="/cart" element={<PurchaseProcessCart />} />
         <Route
-          path="/checkout/billingaddress"
+          path="/cart/billingaddress"
           element={<TheSeconedStepOfTheShoppingCart />}
         />
-        <Route path="/myaccount" element={<Panel />} />
+        <Route path="/cart/billingaddress/mony" element={<TheMonyStepOfTheShoppingCart />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
