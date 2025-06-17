@@ -54,9 +54,10 @@ export default function TopBarMobile() {
 
         <div className="pst  bg-white   pl-5  flex  items-center justify-between">
           <SearchBoxTopBar
+            isShowLayerModals={isShowLayerModals}
             showDetailsSearch={showDetailsSearch}
             closeModaleSearch={closeModaleSearch}
-            setIsShowLayer={setIsShowLayer}
+            setIsShowLayerModals={setIsShowLayerModals}
           />
           <div className=" md:flex hidden & > *:transition-all  & > *:border-1 & > *:border-solid & > *:border-slate-200 & > *:rounded-md & > *:p-2 gap-2 & > *:flex & > *:items-center & > *:gap-1 & > *:cursor-pointer">
             <div className="relative hover:border-red-500 hover:text-red-500">
@@ -101,7 +102,7 @@ export default function TopBarMobile() {
           isShowLayerModals={isShowLayerModals}
         />
       </div>
-
+            
       <div
         onClick={() => setIsShowLayerModals(false)}
         className={
