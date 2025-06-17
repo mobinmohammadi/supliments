@@ -19,7 +19,7 @@ export default function BoxDetailsBasket() {
   
 
   return (
-    <div className="w-full sm:w-80 bg-white flex p-4 font-Dana flex-col gap-5 text-center">
+    <div className="w-full sm:w-[500px] h-[400px] bg-white flex p-4 font-Dana flex-col gap-5 text-center">
       <div className="flex justify-between w-full border-b-1 border-b-[#ef3f56]">
         <div className="flex flex-col gap-3 pb-3 w-full">
           <div className="flex justify-between w-full">

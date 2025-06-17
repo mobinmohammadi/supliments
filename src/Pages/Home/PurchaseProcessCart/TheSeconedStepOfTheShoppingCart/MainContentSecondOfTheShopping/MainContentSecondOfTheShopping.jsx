@@ -22,7 +22,7 @@ export default function MainContentSecondOfTheShopping({
     <div className="sm:pb-32">
       <div className="flex flex-col gap-12">
         <span>مرسوله 1 از 1</span>
-        <div className="grid grid-cols-4 sm:grid-cols-5 pr-5 gap-3 & > *:rounded-sm & > *:w-18 & > *:h-18">
+        <div className="grid grid-cols-4 sm:flex pr-5 gap-3 & > *:rounded-sm & > *:w-18 & > *:h-18">
           {cart.map((item) => (
             <img src={item.img} alt="" />
           ))}
@@ -49,7 +49,7 @@ export default function MainContentSecondOfTheShopping({
             </span>
             <span className="w-full h-[2px] bg-slate-400 rounded-full inline-block"></span>
           </div>
-          <div className="flex w-full pr-54 pb-3 & > *:w-full & > *:sm:w-auto & > *:text-x  overflow-x-scroll & > *:cursor-pointer  & > *:flex & > *:pr-10 & > *:pl-10  & > *:pt-2 & > *:pb-2 justify-center & > *:text-xs & > *:text-slate-500 & > *:flex-col & > *:gap-1 & > *:bg-slate-200 & > *:text-center">
+          <div className="flex w-full pr-54 sm:pr-0 pb-3 & > *:w-full & > *:sm:w-auto & > *:text-x & > *:sm:text-sm sm:overflow-x-auto overflow-x-scroll & > *:cursor-pointer  & > *:flex & > *:pr-10 & > *:pl-10  & > *:pt-2 & > *:pb-2 justify-center & > *:text-xs & > *:text-slate-500 & > *:flex-col & > *:gap-1 & > *:bg-slate-200 & > *:text-center">
             {days.map((item, index) => (
               <div
                 onClick={() => setIsActiveDay(item.date)}
@@ -60,8 +60,8 @@ export default function MainContentSecondOfTheShopping({
                     : ""
                 }`}
               >
-                <span>{item.date}</span>
                 <span>{item.day}</span>
+                <span>{item.date}</span>
               </div>
             ))}
           </div>

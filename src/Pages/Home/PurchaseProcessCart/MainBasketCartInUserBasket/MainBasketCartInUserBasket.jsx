@@ -3,7 +3,7 @@ import { CartContext } from "../../../../assets/Context/CartContext";
 
 export default function MainBasketCartInUserBasket({item}) {
 
-    const {id, img,name, src , price} = item
+    const {id, img,name, src , price ,count} = item
     const {removeInBasket} = useContext(CartContext)
 
   return (
@@ -23,6 +23,10 @@ export default function MainBasketCartInUserBasket({item}) {
             <div className="text-xs flex gap-0.5">
               <span>{price.toLocaleString()}</span>
               <span>تومان</span>
+            </div>
+            <div className="flex gap-0.5 items-center text-x">
+                <span>{count}</span>
+                <span>از همین محصول در سبد خرید شما است</span>
             </div>
           </div>
         </div>

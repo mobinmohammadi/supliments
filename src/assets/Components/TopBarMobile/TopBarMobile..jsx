@@ -81,7 +81,7 @@ export default function TopBarMobile() {
             className="relative border-1 pt-1 pb-1 flex md:hidden pr-6 pl-2 mr-2 rounded-l-sm cursor-pointer bg-rose-600 text-white rounded-r-md"
           >
             {cart?.length ? (
-              <div className="w-5 h-5 bg-gray-900 text-xs pt-1 transition-all rounded-full text-center flex justify-center items-center absolute -right-2 -top-3">
+              <div className="w-5 h-5 bg-gray-900 text-xs transition-all rounded-full text-center flex justify-center items-center absolute -right-2 -top-3">
                 <span>{cart?.length}</span>
               </div>
             ) : null}
