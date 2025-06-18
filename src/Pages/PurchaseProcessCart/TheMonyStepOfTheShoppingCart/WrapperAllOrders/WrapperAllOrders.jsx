@@ -29,7 +29,6 @@ export default function WrapperAllOrders() {
             {cart.map((item) => (
               <>
                 <div className="flex flex-col items-center gap-3 ">
-                  {console.log(item)}
                   <img
                     className="rounded-e-sm w-24 h-24 "
                     src={`../${item.img}`}

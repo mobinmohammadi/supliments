@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 export default function MainContentSecondOfTheShopping({
   isActiveDay,
   setIsActiveDay,
+  setISClickedPost,
   detailUserInLocalStorage,
 }) {
   const { cart, allPriceInBasket } = useContext(CartContext);
@@ -19,7 +20,6 @@ export default function MainContentSecondOfTheShopping({
     { day: "شنبه", date: "30 خرداد" },
     { day: "یک‌شنبه", date: "31 خرداد" },
   ];
-  console.log(detailUserInLocalStorage);
   
   return (
     <div className="sm:pb-32">
@@ -78,8 +78,9 @@ export default function MainContentSecondOfTheShopping({
           <span className=" w-50  text-xs sm:text-sm ">انتخاب شیوه ارسال </span>
           <span className="w-full h-[2px] bg-slate-400 rounded-full inline-block"></span>
         </div>
-        <div className="flex flex-col gap-2">
+        <div onClick={() => setISClickedPost(prev => !prev)} className="flex flex-col gap-2">
           <BoxPost
+          
             setIsActivePost={setIsActivePost}
             isActivePost={isActivePost}
           />

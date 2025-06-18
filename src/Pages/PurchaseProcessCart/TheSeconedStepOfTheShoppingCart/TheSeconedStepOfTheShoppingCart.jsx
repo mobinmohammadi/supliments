@@ -35,6 +35,7 @@ export default function TheSeconedStepOfTheShoppingCart() {
     const removeAddreas = dataForDelete.filter((item) => item.id !== addreas);
     localStorage.setItem("userOrders", JSON.stringify(removeAddreas));
   };
+  const [isClickedPost, setISClickedPost] = useState(false);
 
   return (
     <div className="w-full">
@@ -75,12 +76,16 @@ export default function TheSeconedStepOfTheShoppingCart() {
               <span>ایجاد آدرس جدید</span>
             </div>
             <MainContentSecondOfTheShopping
+            setISClickedPost={setISClickedPost}
               detailUserInLocalStorage={detailUserInLocalStorage}
               isActiveDay={isActiveDay}
               setIsActiveDay={setIsActiveDay}
             />
           </div>
-          <BoxDetailsBasket />
+          <BoxDetailsBasket
+            isClickedPost={isClickedPost}
+            setISClickedPost={setISClickedPost}
+          />
         </div>
       </div>
       {isDetailsBoxUserForOrders ? (
