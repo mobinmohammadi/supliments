@@ -11,7 +11,7 @@ export default function WrapperAllOrders() {
         <span className="w-full h-[2px] bg-slate-400 overflow-hidden rounded-full inline-block"></span>
       </div>
       <div className="border-b pb-4  bg-white rounded-md pt-5 pr-4 pl-4 ">
-        <div className="flex justify-between border-b-1 pb-4 border-b-slate-300 border-solid text-xs text-center text-slate-500 ">
+        <div className="flex justify-between border-b-1 pb-4 gap-1 sm:text-xs border-b-slate-300 border-solid text-x text-center text-slate-500 ">
           <div className="flex flex-col gap-1 ">
             <span>مرسوله</span>
             <span className="text-gray-800">{cart.length} کالا</span>
