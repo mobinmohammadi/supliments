@@ -26,12 +26,12 @@ export default function Home() {
         <div className="">
           <DiscriptionHome />
         </div>
-        <MySliderWithButtons/>
+        {/* <MySliderWithButtons/> */}
         <BrandsSupplements />
         <ArticlesSections />
         <FrequentlyAskedQuestions />
       </div>
-      <div className="mb-16">
+      <div className="mb-16 sm:mb-0">
         <Footer />
       </div>
       <div className="sm:hidden">
