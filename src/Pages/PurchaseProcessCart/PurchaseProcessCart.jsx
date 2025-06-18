@@ -1,6 +1,6 @@
 import React from "react";
 import TheFirstStepOfTheShoppingCart from "./TheFirstStepOfTheShoppingCart/TheFirstStepOfTheShoppingCart";
-import TopBarMobile from "../../../assets/Components/TopBarMobile/TopBarMobile.";
+import TopBarMobile from "../../assets/Components/TopBarMobile/TopBarMobile.";
 import CheckoutProgressBar from "./CheckoutProgressBar/CheckoutProgressBar";
 import BradCrumbCart from "./BradCrumbCart/BradCrumbCart";
 import { Outlet } from "react-router-dom";

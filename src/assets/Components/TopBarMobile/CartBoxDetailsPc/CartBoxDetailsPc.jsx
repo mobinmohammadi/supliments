@@ -6,11 +6,7 @@ import { Link } from "react-router-dom";
 export default function CartBoxDetailsPc(props) {
   const { cart } = useContext(CartContext);
 
-  
-  
-
-
-  let {openModalUserbasket , btnOpenUserBasket } = props;
+  let { openModalUserbasket, btnOpenUserBasket } = props;
   return (
     <div className="relative group">
       <div
@@ -50,16 +46,26 @@ export default function CartBoxDetailsPc(props) {
           </Link>
         ) : null}
       </div>
-      <svg
-        ref={btnOpenUserBasket}
-        onClick={() => openModalUserbasket()}
-        className="w-5 h-5"
-      >
-        <use href="#shopping-cart"></use>
-      </svg>
-      <span className="absolute -top-2 -right-2 bg-red-500 p-1 font-Dana rounded-full pr-2 pl-2 text-x text-white">
-        {cart.length}
-      </span>
+      <div className="flex sm:hidden">
+        <svg
+          ref={btnOpenUserBasket}
+          onClick={() => openModalUserbasket()}
+          className="w-5 h-5"
+        >
+          <use href="#shopping-cart"></use>
+        </svg>
+        <span className="absolute -top-2 -right-2  bg-red-500 p-1 font-Dana rounded-full pr-2 pl-2 text-x text-white">
+          {cart.length}
+        </span>
+      </div>
+      <div className="hidden sm:flex">
+        <svg ref={btnOpenUserBasket} className="w-5 h-5">
+          <use href="#shopping-cart"></use>
+        </svg>
+        <span className="absolute -top-2 -right-2  bg-red-500 p-1 font-Dana rounded-full pr-2 pl-2 text-x text-white">
+          {cart.length}
+        </span>
+      </div>
     </div>
   );
 }

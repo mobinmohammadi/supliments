@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import TopBarMobile from "../../../../assets/Components/TopBarMobile/TopBarMobile.";
+import TopBarMobile from "../../../assets/Components/TopBarMobile/TopBarMobile.";
 import CheckoutProgressBar from "../CheckoutProgressBar/CheckoutProgressBar";
 import MainBasketCartInUserBasket from "../MainBasketCartInUserBasket/MainBasketCartInUserBasket";
-import { CartContext } from "../../../../assets/Context/CartContext";
+import { CartContext } from "../../../assets/Context/CartContext";
 import { Link } from "react-router-dom";
 import BoxDetailsBasket from "../BoxDetailsBasket/BoxDetailsBasket";
 

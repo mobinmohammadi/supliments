@@ -4,16 +4,16 @@ import "./index.css";
 import Home from "./Pages/Home/Home.jsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import OnsPageProducts from "./assets/Components/OnsPageProducts/OnsPageProducts.jsx";
-import FilterBrands from "./Pages/Home/FilterBrands/FilterBrands.jsx";
-import CategurtByProducts from "./Pages/Home/CategurtByProducts/CategurtByProducts.jsx";
+import FilterBrands from "./Pages/FilterBrands/FilterBrands.jsx";
+import CategurtByProducts from "./Pages/CategurtByProducts/CategurtByProducts.jsx";
 import { CartProvider } from "./assets/Context/CartContext.jsx";
-import NotFoundPage from "./Pages/Home/NotFoundPage/NotFoundPage.jsx";
+import NotFoundPage from "./Pages//NotFoundPage/NotFoundPage.jsx";
 import { ToastContainer } from "react-toastify";
-import PurchaseProcessCart from "./Pages/Home/PurchaseProcessCart/PurchaseProcessCart.jsx";
-import TheSeconedStepOfTheShoppingCart from "./Pages/Home/PurchaseProcessCart/TheSeconedStepOfTheShoppingCart/TheSeconedStepOfTheShoppingCart.jsx";
-import Panel from "./Pages/Home/Panel/Panel.jsx";
-import Login from "./Pages/Home/Login/Login.jsx";
-import TheMonyStepOfTheShoppingCart from "./Pages/Home/PurchaseProcessCart/TheMonyStepOfTheShoppingCart/TheMonyStepOfTheShoppingCart.jsx";
+import PurchaseProcessCart from "./Pages/PurchaseProcessCart/PurchaseProcessCart.jsx";
+import TheSeconedStepOfTheShoppingCart from "./Pages/PurchaseProcessCart/TheSeconedStepOfTheShoppingCart/TheSeconedStepOfTheShoppingCart.jsx";
+import Panel from "./Pages/Panel/Panel.jsx";
+import Login from "./Pages/Login/Login.jsx";
+import TheMonyStepOfTheShoppingCart from "./Pages/PurchaseProcessCart/TheMonyStepOfTheShoppingCart/TheMonyStepOfTheShoppingCart.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>

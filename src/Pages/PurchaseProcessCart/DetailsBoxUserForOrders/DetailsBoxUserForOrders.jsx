@@ -1,9 +1,9 @@
 // Updated and cleaned-up version of DetailsBoxUserForOrders
 import React, { useEffect, useState } from "react";
-import InputField from "../../../../assets/Components/PurchaseProcessCart/CustomElem/InputFiled/InputField";
-import TextAreaField from "../../../../assets/Components/PurchaseProcessCart/CustomElem/TextAreaField/TextAreaField";
-import SelectFiled from "../../../../assets/Components/PurchaseProcessCart/CustomElem/SelectFiled/SelectFiled";
-import provincesData from "./../../../../provincesData.json";
+import InputField from "../../../assets/Components/PurchaseProcessCart/CustomElem/InputFiled/InputField";
+import TextAreaField from "../../../assets/Components/PurchaseProcessCart/CustomElem/TextAreaField/TextAreaField";
+import SelectFiled from "../../../assets/Components/PurchaseProcessCart/CustomElem/SelectFiled/SelectFiled";
+import provincesData from "./../../../provincesData.json";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { toast } from "react-toastify";

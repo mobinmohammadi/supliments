@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { CartContext } from "../../../../assets/Context/CartContext";
+import { CartContext } from "../../../assets/Context/CartContext";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export default function BoxDetailsBasket() {
