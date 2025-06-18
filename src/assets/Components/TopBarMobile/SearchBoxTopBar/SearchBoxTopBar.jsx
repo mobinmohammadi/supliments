@@ -21,40 +21,38 @@ export default function SearchBoxTopBar({
   const [allArrayResultTopSixSearch, setAllArrayResultTopSixSearch] = useState(
     []
   );
-
+  const [isWrapperDetailsSearch, setWrapperDetailsSearch] = useState(false);
   const [isShowLoaderSearch, setIsShowLoaderSearch] = useState(false);
 
-  const wrapperDetailsSearch = useRef();
-
   const serchingToProducts = (e) => {
+    const input = e.trim();
     setSearchValue(e);
-    console.log(searchValue);
     setIsShowNotFound(false);
     {
-      if (searchValue.length > 3) {
+      if (!input.length) {
+        setArrayResultBeforSearch([]);
+        return;
+      } else if (e.length > 3) {
         setIsShowLoaderSearch(true);
 
         setTimeout(() => {
           setIsShowLoaderSearch(false);
         }, 1000);
         const resultSerching = preSellProducts.filter((item) =>
-          item.name.includes(searchValue)
+          item.name.includes(e)
         );
-       
 
         setArrayResultBeforSearch(resultSerching);
         setAllArrayResultTopSixSearch([]);
-        if (arrayResultBeforSearch.length == 0) {
+        if (resultSerching.length == 0) {
           setTimeout(() => {
             setIsShowNotFound(true);
-            // setArrayResultBeforSearch([])
           }, 1000);
-          wrapperDetailsSearch.current.classList.add("hidden");
+          setWrapperDetailsSearch(true);
         } else {
           setIsShowNotFound(false);
         }
       }
-
     }
   };
 
@@ -69,10 +67,10 @@ export default function SearchBoxTopBar({
           <span>موردی یافت نشد 😑</span>
         </div>
       );
-    } else if (searchValue.length >= 2 && searchValue.length <= 4) {
+    } else if (searchValue.length >= 2) {
       return (
         <div
-          className={`hidden items-center ${
+          className={` items-center ${
             isShowNotFound ? "flex" : "hidden"
           }  justify-center bg-red-500 font-bold text-md text-white pt-2 pb-2 `}
         >
@@ -80,13 +78,8 @@ export default function SearchBoxTopBar({
         </div>
       );
     }
-
+    return null;
   };
-  useEffect(() => {
-    lagikForSearchInput();
-    console.log(arrayResultBeforSearch);
-    
-  }, [searchValue]);
 
   const searchingTopResershHandler = (title) => {
     const resultTopSixSearch = allProducts.filter((item) =>
@@ -107,6 +100,7 @@ export default function SearchBoxTopBar({
           <input
             onClick={() => {
               setIsShowLayerModals(true);
+              setWrapperDetailsSearch(true);
             }}
             onChange={(e) => serchingToProducts(e.target.value)}
             value={searchValue}
@@ -133,17 +127,18 @@ export default function SearchBoxTopBar({
               <div
                 className={`w-full ${
                   isShowLoaderSearch ? "flex" : "hidden"
-                } flex-col gap-10  ${!allArrayResultTopSixSearch.length ? "h-full" : "h-[200px]" } font-Morabba-Bold absolute  z-20  items-center justify-center bg-white`}
+                } flex-col gap-10  ${
+                  !allArrayResultTopSixSearch.length ? "h-72" : "h-[200px]"
+                } font-Morabba-Bold absolute  z-20  items-center justify-center bg-white`}
               >
                 <span className="loader"></span>
                 <div className="text-center pl-5">
                   در حال سرچ لطفا منتظر بمانید ....
                 </div>
               </div>
-                
-              {arrayResultBeforSearch.length ? (
+
+              {arrayResultBeforSearch.length > 0 ? (
                 <div className="font-Dana">
-                  
                   <div className="border-slate-400 w-full r-5 border-b-2 border-solid p-2">
                     <span className=" font-Dana-Bold flex gap-1 text-x sm:text-sm">
                       <span className="text-green-600 ">
@@ -152,52 +147,68 @@ export default function SearchBoxTopBar({
                       <span className="text-gray-700">مورد یافت شد </span>
                     </span>
                   </div>
-                  
+
                   {arrayResultBeforSearch.map((item, index) => (
                     <div className="pt-2 pb-2">
                       <BoxForResultSearches key={index + 1} {...item} />
                     </div>
                   ))}
                 </div>
-              ) : (
+              ) : searchValue.length > 5 &&
+                !arrayResultBeforSearch.length &&
+                searchValue.length >= 2 ? null : (
                 <div
-                  ref={wrapperDetailsSearch}
-                  className="flex flex-col gap-4 pr-2 md:pr-5 pl-2 md:pl-5"
+                  className={` ${
+                    isWrapperDetailsSearch
+                      ? "flex opacity-100 visible"
+                      : "hidden opacity-0 invisible"
+                  } flex-col gap-4 pr-2 md:pr-5 pl-2 md:pl-5`}
                 >
-                  <span className=" font-bold pt-5">جستوجو های برتر</span>
-                  <span className="bg-slate-200 w-full h-[2px] "></span>
-                  <div className="border-b-2 border-solid border-slate-200 pb-4 grid s:grid-cols-2 x:grid-cols-4 xs:grid-cols-4 md:grid-cols-5 mmd:grid-cols-7  gap-2">
-                    {papularSearchesInwebsite.map((item, index) => (
-                      <div
-                        onClick={() => searchingTopResershHandler(item.title)}
-                        className=""
-                      >
-                        <TopSixSearchInWebsite key={index + 1} {...item} />
+                  {isShowNotFound ? null : (
+                    <>
+                      <div className="flex flex-col gap-3">
+                        <span className=" font-bold pt-5">جستوجو های برتر</span>
+                        <span className="bg-slate-200 w-full h-[2px] "></span>
+                        <div className="border-b-2 border-solid border-slate-200 pb-4 grid s:grid-cols-2 x:grid-cols-4 xs:grid-cols-4 md:grid-cols-5 mmd:grid-cols-7  gap-2">
+                          {papularSearchesInwebsite.map((item, index) => (
+                            <div
+                              onClick={() =>
+                                searchingTopResershHandler(item.title)
+                              }
+                              className=""
+                            >
+                              <TopSixSearchInWebsite
+                                key={index + 1}
+                                {...item}
+                              />
+                            </div>
+                          ))}
+                        </div>
+                        <div className="flex justify-between border-b-2 border-slate-200 border-dashed pb-4">
+                          <span className="font-bold">نتیجه جستوجو</span>
+                          <span
+                            onClick={() => setAllArrayResultTopSixSearch([])}
+                            className="font-bold text-red-400"
+                          >
+                            حذف
+                          </span>
+                        </div>
+                        <div
+                          className={` ${
+                            allArrayResultTopSixSearch.length >= 4
+                              ? "overflow-y-scroll  h-[200px]"
+                              : ""
+                          }`}
+                        >
+                          {allArrayResultTopSixSearch.length
+                            ? allArrayResultTopSixSearch.map((item) => (
+                                <BoxForResultSearches {...item} />
+                              ))
+                            : null}
+                        </div>
                       </div>
-                    ))}
-                  </div>
-                  <div className="flex justify-between border-b-2 border-slate-200 border-dashed pb-4">
-                    <span className="font-bold">نتیجه جستوجو</span>
-                    <span
-                      onClick={() => setAllArrayResultTopSixSearch([])}
-                      className="font-bold text-red-400"
-                    >
-                      حذف
-                    </span>
-                  </div>
-                  <div
-                    className={` ${
-                      allArrayResultTopSixSearch.length >= 4
-                        ? "overflow-y-scroll  h-[200px]"
-                        : ""
-                    }`}
-                  >
-                    {allArrayResultTopSixSearch.length
-                      ? allArrayResultTopSixSearch.map((item) => (
-                          <BoxForResultSearches {...item} />
-                        ))
-                      : null}
-                  </div>
+                    </>
+                  )}
                 </div>
               )}
             </div>
