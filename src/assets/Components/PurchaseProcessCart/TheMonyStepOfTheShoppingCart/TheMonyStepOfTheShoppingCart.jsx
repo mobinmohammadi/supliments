@@ -1,10 +1,10 @@
 import React from "react";
-import TopBarMobile from "../../../assets/Components/TopBarMobile/TopBarMobile.";
+import TopBarMobile from "../../TopBarMobile/TopBarMobile.";
 import BradCrumbCart from "../BradCrumbCart/BradCrumbCart";
 import CheckoutProgressBar from "../CheckoutProgressBar/CheckoutProgressBar";
 import MainContent from "./MainContent/MainContent";
 import WrapperAllOrders from "./WrapperAllOrders/WrapperAllOrders";
-import BoxDetailsBasket from "../BoxDetailsBasket/BoxDetailsBasket";
+import BoxDetailsBasket from "./../BoxDetailsBasket/BoxDetailsBasket";
 
 export default function TheMonyStepOfTheShoppingCart() {
   return (

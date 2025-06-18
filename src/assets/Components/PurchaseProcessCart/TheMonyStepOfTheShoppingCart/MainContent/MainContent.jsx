@@ -12,7 +12,7 @@ export default function MainContent() {
           </div>
         </div>
         <div className="flex w-full items-center justify-between ">
-          <span className=" w-50  text-xs sm:text-sm ">انتخاب زمان ارسال</span>
+          <span className=" w-50  text-xs sm:text-sm ">انتخاب شیوه پرداخت</span>
           <span className="w-full h-[2px] bg-slate-400 overflow-hidden rounded-full inline-block"></span>
         </div>
         <div className="flex gap-5 flex-col sm:flex-row">

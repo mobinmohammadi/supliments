@@ -10,11 +10,11 @@ import { CartProvider } from "./assets/Context/CartContext.jsx";
 import NotFoundPage from "./Pages//NotFoundPage/NotFoundPage.jsx";
 import { ToastContainer } from "react-toastify";
 import PurchaseProcessCart from "./Pages/PurchaseProcessCart/PurchaseProcessCart.jsx";
-import TheSeconedStepOfTheShoppingCart from "./Pages/PurchaseProcessCart/TheSeconedStepOfTheShoppingCart/TheSeconedStepOfTheShoppingCart.jsx";
+import TheSeconedStepOfTheShoppingCart from "./assets/Components/PurchaseProcessCart/TheSeconedStepOfTheShoppingCart/TheSeconedStepOfTheShoppingCart.jsx"
 import Panel from "./Pages/Panel/Panel.jsx";
 import Login from "./Pages/Login/Login.jsx";
-import TheMonyStepOfTheShoppingCart from "./Pages/PurchaseProcessCart/TheMonyStepOfTheShoppingCart/TheMonyStepOfTheShoppingCart.jsx";
-import TheFirstStepOfTheShoppingCart from "./Pages/PurchaseProcessCart/TheFirstStepOfTheShoppingCart/TheFirstStepOfTheShoppingCart.jsx";
+import TheMonyStepOfTheShoppingCart from "./assets/Components/PurchaseProcessCart/TheMonyStepOfTheShoppingCart/TheMonyStepOfTheShoppingCart.jsx";
+import TheFirstStepOfTheShoppingCart from "./assets/Components/PurchaseProcessCart/TheFirstStepOfTheShoppingCart/TheFirstStepOfTheShoppingCart.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>

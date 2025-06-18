@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { CartContext } from "../../../assets/Context/CartContext";
+import { CartContext } from "../../../Context/CartContext";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export default function BoxDetailsBasket({ isClickedPost, setISClickedPost }) {
@@ -7,7 +7,7 @@ export default function BoxDetailsBasket({ isClickedPost, setISClickedPost }) {
 
   const location = useLocation();
   const pathName = location.pathname;
-
+  const finalPrice = allPriceInBasket + 250000
   const [isBillingPage, setIsBillingPage] = useState(false);
   const [isPaymentPage, setIsPaymentPage] = useState(false);
 
@@ -57,7 +57,7 @@ export default function BoxDetailsBasket({ isClickedPost, setISClickedPost }) {
         </div>
       </div>
 
-      {isPaymentPage && isClickedPost ? (
+      {isPaymentPage ? (
         <div className="flex flex-col gap-2">
           <span className="text-gray-900 text-sm font-Morabba">
             مبلغ قابل پرداخت

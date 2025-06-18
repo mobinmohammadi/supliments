@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import TopBarMobile from "../../../assets/Components/TopBarMobile/TopBarMobile.";
+import TopBarMobile from "../../TopBarMobile/TopBarMobile.";
 import CheckoutProgressBar from "../CheckoutProgressBar/CheckoutProgressBar";
 import MainBasketCartInUserBasket from "../MainBasketCartInUserBasket/MainBasketCartInUserBasket";
-import { CartContext } from "../../../assets/Context/CartContext";
+import { CartContext } from "../../../Context/CartContext";
 import { Link } from "react-router-dom";
-import BoxDetailsBasket from "../BoxDetailsBasket/BoxDetailsBasket";
+import BoxDetailsBasket from "../../PurchaseProcessCart/BoxDetailsBasket/BoxDetailsBasket";
 import BradCrumbCart from "../BradCrumbCart/BradCrumbCart";
 
 export default function TheFirstStepOfTheShoppingCart() {
