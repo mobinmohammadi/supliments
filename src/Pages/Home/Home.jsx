@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TopBarMobile from "../../assets/Components/TopBarMobile/TopBarMobile.";
-import WrapperCateguryItem from "../../assets/wrapperCateguryItme/wrapperCateguryItem";
+import WrapperCateguryItem from "../../assets/Components/wrapperCateguryItem/wrapperCateguryItem"
 import BrandsSupplements from "../../assets/Components/BrandsSupplements/BrandsSupplements";
 import ArticlesSections from "../../assets/Components/ArticlesSections/ArticlesSections";
 import Footer from "../../assets/Components/Footer/Footer";

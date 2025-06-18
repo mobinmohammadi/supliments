@@ -1,31 +1,32 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./../../../App.css";
 
-export default function RoadMapSite({ categury, name, titleBreadCrumb }) {
+export default function RoadMapSite({ categury = [], name, titleBreadCrumb }) {
   return (
-    <div className="bg-slate-200 font-Dana  pr-4 font-bold items-center container-custom m-auto  mt-5 rounded-md">
-      <div className="flex h-10 gap-7 & > *:h-full items-center pt-2 pb-2 ">
-        <Link to="/" className="flex items-center h-full w-12 breadcrumb-item">
-          <svg className="w-5 h-5">
-            <use href="#home"></use>
+    <div className="bg-slate-300 w-[97%] mx-auto pt-2 pb-2 font-Dana font-bold overflow-x-auto rounded-md px-4">
+      <div className="flex gap-5 items-center min-w-max scroll-smooth snap-x snap-mandatory">
+        <Link
+          to="/"
+          className="flex items-center justify-center text-gray-700 snap-start shrink-0"
+        >
+          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+              <use href="#home"></use>
           </svg>
         </Link>
-        <div className="flex items-center w-[90px] breadcrumb-item">
-          <span className="ml-5 text-xs">
-            {categury?.length ? "دسته بندی ها" : "مکمل ها"}
+
+        <span className="text-xs text-gray-700 snap-start shrink-0 whitespace-nowrap">
+          {categury.length ? "دسته‌بندی‌ها" : "مکمل‌ها"}
+        </span>
+
+        {titleBreadCrumb && (
+          <span className="text-xs text-gray-700 snap-start shrink-0 whitespace-nowrap">
+            {titleBreadCrumb}
           </span>
-        </div>
+        )}
 
-        {titleBreadCrumb?.length ? (
-          <div className="flex items-center breadcrumb-item">
-            <span className="ml-5 text-xs ">{titleBreadCrumb}</span>
-          </div>
-        ) : null}
-
-        <div className="flex items-center breadcrumb-item">
-          <span className="ml-5 text-xs ">{name}</span>
-        </div>
+        <span className="text-xs text-red-500 snap-start shrink-0 whitespace-nowrap">
+          {name}
+        </span>
       </div>
     </div>
   );

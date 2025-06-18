@@ -1,7 +1,7 @@
 import React from "react";
-import CateguryItme from "../Components/CateguryItme/CateguryItme.jsx";
-import { allCategury } from "../../Data.js";
-import SectionsTitle from "../Components/SectionsTitle/SectionsTitle.jsx";
+import CateguryItme from "../CateguryItme/CateguryItme.jsx";
+import { allCategury } from "../../../Data.js";
+import SectionsTitle from "../SectionsTitle/SectionsTitle.jsx";
 
 export default function wrapperCateguryItem() {
   return (
