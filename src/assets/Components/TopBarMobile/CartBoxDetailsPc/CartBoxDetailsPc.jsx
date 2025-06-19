@@ -8,9 +8,9 @@ export default function CartBoxDetailsPc(props) {
 
   let { openModalUserbasket, btnOpenUserBasket } = props;
   return (
-    <div className="relative group">
+    <div className="relative group font-Dana">
       <div
-        className={`absolute overflow-hidden  opacity-0 invisible border  border-solid group-hover:visible left-0 bg-white  transition-all rounded-md group-hover:opacity-100 min-h-18 w-[400px]  vi top-full`}
+        className={`absolute overflow-hidden z-10 opacity-0 invisible border  border-solid group-hover:visible left-0 bg-white  transition-all rounded-md group-hover:opacity-100 min-h-18 w-[400px]  vi top-full`}
       >
         <div className=" text-gray-900 pt-2  shadow-2xl w-full  top-full h-full  ">
           <div className="flex justify-between border-b-1 pb-2 border-solid border-solid-200">

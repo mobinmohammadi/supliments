@@ -93,7 +93,7 @@ export default function SearchBoxTopBar({
       <div className="flex z-20 w-full items-center  sm:justify-between md:w-[50%] items-right md:justify-right  ">
         <img
           className="w-15"
-          src="https://www.svgrepo.com/show/489305/gym.svg"
+          // src="https://www.svgrepo.com/show/489305/gym.svg"
           alt=""
         />
         <div className="bg-slate-100  sm:flex hidden md:w-[24rem] w-full relative h-7 md:h-10 item-center justify-center rounded-md">

@@ -76,8 +76,8 @@ export default function CategurtProducts() {
   }, [filterByRange, valueSearchInCateguryPage]);
 
   return (
-    <div className="flex pb-10">
-      <div className="mt-24 w-full ">
+    <div className="flex pb-10 mr-3 ml-3  ">
+      <div className=" sm:mt-32 mt-18 w-full ">
         <RoadMapSite categury="دسته بندی ها" name={title} />
         <div className="container-custom">
           <div className="flex gap-5 mt-10 ">

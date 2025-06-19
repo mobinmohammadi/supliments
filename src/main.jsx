@@ -10,11 +10,12 @@ import { CartProvider } from "./assets/Context/CartContext.jsx";
 import NotFoundPage from "./Pages//NotFoundPage/NotFoundPage.jsx";
 import { ToastContainer } from "react-toastify";
 import PurchaseProcessCart from "./Pages/PurchaseProcessCart/PurchaseProcessCart.jsx";
-import TheSeconedStepOfTheShoppingCart from "./assets/Components/PurchaseProcessCart/TheSeconedStepOfTheShoppingCart/TheSeconedStepOfTheShoppingCart.jsx"
+import TheSeconedStepOfTheShoppingCart from "./assets/Components/PurchaseProcessCart/TheSeconedStepOfTheShoppingCart/TheSeconedStepOfTheShoppingCart.jsx";
 import Panel from "./Pages/Panel/Panel.jsx";
 import Login from "./Pages/Login/Login.jsx";
 import TheMonyStepOfTheShoppingCart from "./assets/Components/PurchaseProcessCart/TheMonyStepOfTheShoppingCart/TheMonyStepOfTheShoppingCart.jsx";
 import TheFirstStepOfTheShoppingCart from "./assets/Components/PurchaseProcessCart/TheFirstStepOfTheShoppingCart/TheFirstStepOfTheShoppingCart.jsx";
+import ContactUs from "./Pages/ContactUs/ContactUs.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -30,11 +31,19 @@ createRoot(document.getElementById("root")).render(
           path="/categuryByProducts/:categuryProduct"
           element={<CategurtByProducts />}
         />
-        <Route path="/cart" element={<PurchaseProcessCart />} >
-              <Route index  element={<TheFirstStepOfTheShoppingCart />}/>
-              <Route path="billingaddress" element={<TheSeconedStepOfTheShoppingCart />}/>
-              <Route path="billingaddress/mony" element={<TheMonyStepOfTheShoppingCart />} />
+        <Route path="/cart" element={<PurchaseProcessCart />}>
+          <Route index element={<TheFirstStepOfTheShoppingCart />} />
+          <Route
+            path="billingaddress"
+            element={<TheSeconedStepOfTheShoppingCart />}
+          />
+          <Route
+            path="billingaddress/mony"
+            element={<TheMonyStepOfTheShoppingCart />}
+          />
         </Route>
+        <Route path="contactus" element={<ContactUs />} />
+
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

@@ -41,7 +41,7 @@ export default function BoxesForUserBaskets({item}) {
   let {discountProductInBasket} = useContext(CartContext)
 
   return (
-    <div className="flex  border-b border-zinc-600 border-solid ">
+    <div className="flex  border-b border-zinc-600 border-solid font-Dana ">
       <div className="flex w-full justify-around mt-3 gap-1 pr-2 pb-3">
         <img className="w-20 h-20 rounded-md" src={img} alt="" />
         <div className="flex flex-col justify-between">

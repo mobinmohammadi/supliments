@@ -1,15 +1,34 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../../Context/CartContext";
+import HadelAddToCartBySelectorCount from "./HadelAddToCartBySelectorCount/HadelAddToCartBySelectorCount";
 
 export default function ShoppingCartDetailAndOtherSpecifications({
-    addProductsToBasket,
+  addProductsToBasket,
   filtredOnsProducts,
   titleForBasket,
-  
+
   setTitleForBasket,
 }) {
+  const [mainDataAfterSelect, setMainDataAfterSelect] = useState(null);
+  const [countProductSelect, setCountProductSelect] = useState(null);
+
   useEffect(() => {}, [titleForBasket]);
-    const {addToCart} = useContext(CartContext)
+  const { addToCart } = useContext(CartContext);
+
+  const handlerByCountSelectUser = (product) => {
+    if (product.count) {
+      console.log("دارد");
+      console.log(product.count);
+      console.log();
+    } else {
+      product.count = 0
+      const neewArra = {...product, count: (product.count = countProductSelect) };
+      console.log(neewArra);
+
+      console.log("ندارد");
+    }
+  };
+
 
   return (
     <div className="bg-[#f5f5f5] sm:max-w-60 w-full pr-2 pl-2 & > *:border-b-1 & > *:pb-2 & > *:border-b-slate-200 flex flex-col gap-2">
@@ -66,28 +85,29 @@ export default function ShoppingCartDetailAndOtherSpecifications({
           </div>
         </div>
       </div>
-      <div className="flex items-center gap-1 text-sm  justify-center">
-        <span className=" text-zinc-600  font-bold ">
-          {filtredOnsProducts[0].price}
-        </span>
-        <span className="text-[15px] text-blue-800 ">تومان</span>
-      </div>
-      <div className="">
-        <div className="flex flex-col">
-          <span>تعداد : </span>
-          <select
-            className="border border-slate-600 border-solid rounded-md mb-2 mt-2"
-            name=""
-            id=""
-          >
-            <option value="1">1</option>
-            <option value="1">2</option>
-            <option value="1">3</option>
-            <option value="1">4</option>
-            <option value="1">5</option>
-            <option value="1">6</option>
-          </select>
+      {mainDataAfterSelect && countProductSelect > 1 ? (
+        <div className="flex gap-2 sm:gap-4 h-20  text-xs border-0 text-zinc-600 flex-col  text-center   font-bold justify-center sm:h-10 items-center">
+          <span>
+            شما <span className="text-red-700">{countProductSelect}</span> از
+            این محصول انتخاب کردید که مجموع آن
+          </span>
+          <span>{mainDataAfterSelect.toLocaleString()} تومان میشود </span>
         </div>
+      ) : (
+        <div className="flex items-center gap-1 text-sm  justify-center">
+          <span className="  ">
+            {filtredOnsProducts[0].price.toLocaleString()}
+          </span>
+          <span className="text-[15px] text-blue-800 ">تومان</span>
+        </div>
+      )}
+      <div className="">
+        <HadelAddToCartBySelectorCount
+          countProductSelect={countProductSelect}
+          setCountProductSelect={setCountProductSelect}
+          setMainDataAfterSelect={setMainDataAfterSelect}
+          priceProduct={filtredOnsProducts[0].price}
+        />
 
         {titleForBasket == "از این طعم موجودی نداریم 😭" ? (
           <div className="bg-slate-600 gap-0.5    transition-all  abs rounded-sm text-zinc-700 pt-3 pb-3 justify-center flex items-center">
@@ -107,7 +127,8 @@ export default function ShoppingCartDetailAndOtherSpecifications({
 
               <button
                 className="text-sm cursor-pointer"
-                onClick={() => addToCart(filtredOnsProducts[0])}
+                // onClick={() => addToCart(filtredOnsProducts[0])}
+                onClick={() => handlerByCountSelectUser(filtredOnsProducts[0])}
               >
                 افزودن به سبد خرید
               </button>

@@ -80,7 +80,7 @@ export default function Footer() {
               <div className="flex items-center justify-center sm:justify-start sm:items-start">
                 <img
                   className="w-16"
-                  src="https://www.svgrepo.com/show/489305/gym.svg"
+                  // src="https://www.svgrepo.com/show/489305/gym.svg"
                   alt=""
                 />
               </div>

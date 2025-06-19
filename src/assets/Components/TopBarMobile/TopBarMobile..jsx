@@ -13,8 +13,27 @@ import ItemInBasketPc from "../ItemInBasketPc/ItemInBasketPc.jsx";
 import BoxesForUserBaskets from "./BoxesForUserBaskets/BoxesForUserBaskets.jsx";
 import CartBoxDetailsPc from "./CartBoxDetailsPc/CartBoxDetailsPc.jsx";
 import { Link } from "react-router-dom";
+import FooterTopBar from "./FooterTopBar/FooterTopBar.jsx";
 export default function TopBarMobile() {
   const { addToCart, cart, allPriceInBasket } = useContext(CartContext);
+  
+  const [isActiveFooterTopbar  , setIsActiveFooterTopbar] = useState(true)
+
+  const handlerScrollFooterToShow = () => {
+    if(windo < 140){
+      setIsActiveFooterTopbar(true)
+      
+
+    }
+    else{
+      setIsActiveFooterTopbar(false)
+      
+
+    }
+  }
+  useEffect(() => {
+  } , [])
+  const windo = window.addEventListener("scrollend" , handlerScrollFooterToShow)
 
   const modalUserBasket = useRef();
   const showDetailsSearch = useRef();
@@ -48,7 +67,9 @@ export default function TopBarMobile() {
   };
 
   return (
-    <div className=" border-b-4 block border-solid border-sky-700 bg-white fixed w-full z-20 ">
+    <div className=" border-b-4 pt-1 max-w-[1250px]  block border-solid  border-sky-700 bg-white fixed w-full z-20 ">
+      <div className="">
+
       <div className="flex flex-col pt-2 pb-2">
         <img className="" src="./s/offer.gif" alt="" />
 
@@ -111,6 +132,11 @@ export default function TopBarMobile() {
             : ""
         }
       ></div>
+      </div>
+        {/* <div className={`${isActiveFooterTopbar ? "opacity-100 visible block " : "opacity-0 invisible hidden"}`}> */}
+
+      <FooterTopBar/>
+        {/* </div> */}
     </div>
   );
 }
