@@ -74,10 +74,11 @@ body {
 }
 
 .container-custom {
-  width: 98%;
+  width: 97%!important;
   max-width: 1250px!important;
   margin: 0 auto;
 }
+
 
 .swiper-slide {
   text-align: center;

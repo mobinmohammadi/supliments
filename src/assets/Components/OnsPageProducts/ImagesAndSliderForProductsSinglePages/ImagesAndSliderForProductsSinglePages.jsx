@@ -4,7 +4,6 @@ export default function ImagesAndSliderForProductsSinglePages({
   isShowPageShare,
   setIsShowPageShare,
   setSrcImageProductsHandler,
-
   subImg,
   srcProductStatus,
   setIsShowSliderMoreOnOneProducts,

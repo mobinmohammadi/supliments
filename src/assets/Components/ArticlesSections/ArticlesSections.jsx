@@ -20,8 +20,6 @@ export default function ArticlesSections() {
 
             <ArticlesItems key={articles.id} {...articles}/>
             ))}
-           
-
 
         </div>
     </div>

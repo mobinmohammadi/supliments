@@ -1,22 +1,25 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import BoxesForUserBaskets from "./../BoxesForUserBaskets/BoxesForUserBaskets";
 import { CartContext } from "../../../Context/CartContext";
+import { Link } from "react-router-dom";
 
 export default function BasketMobile({
   setIsShowLayerModals,
   closeModalUserBasket,
   modalUserBasket,
-  isShowLayerModals
+  isShowLayerModals,
 }) {
-  const { addToCart, cart , allPriceInBasket} = useContext(CartContext);
+  const { addToCart, cart, allPriceInBasket } = useContext(CartContext);
 
-  const [allPrice, setAllPrice] = useState(0);  
+  const [allPrice, setAllPrice] = useState(0);
   return (
     <div
       ref={modalUserBasket}
-      className={`fixed w-72 transitions-Custom ${isShowLayerModals ? "left-0": "-left-72" } font-Dana -left-80 h-[100vh] z-20 pt-3 shadow-2xl bg-white top-0 `}
+      className={`fixed w-72 transitions-Custom ${
+        isShowLayerModals ? "left-0" : "-left-72"
+      } font-Dana -left-80 h-[100vh] z-20 pt-3 shadow-2xl bg-white top-0 `}
     >
-      <div className="flex relative  justify-between flex-col h-full pb-2">
+      <div className="flex relative  justify-between flex-col h-full pb-35 sm:pb-0">
         <svg
           onClick={() => {
             setIsShowLayerModals(false);
@@ -33,7 +36,9 @@ export default function BasketMobile({
           {cart?.length ? (
             <div className="mt-4 h-[500px] w-full overflow-y-auto">
               {cart
-                ? cart.map((item , index) => <BoxesForUserBaskets key={index + 1 } item={item} />)
+                ? cart.map((item, index) => (
+                    <BoxesForUserBaskets key={index + 1} item={item} />
+                  ))
                 : null}
             </div>
           ) : (
@@ -51,8 +56,20 @@ export default function BasketMobile({
                 {allPriceInBasket.toLocaleString()} تومان
               </span>
             </div>
-            <div className=" bg-green-600 flex justify-center  rounded-sm & > *:cursor-pointer hover:bg-green-700 transition-all cursor-pointer p-3">
-              <button className="text-white ">تسویه حساب</button>
+            <div className="flex-col flex gap-1 text-sm">
+              <div className=" bg-green-600 flex justify-center  rounded-sm  hover:bg-green-700 transition-all p-3">
+                <Link to="/cart" className="text-white ">
+                  تسویه حساب
+                </Link>
+              </div>
+              <Link
+                to="/cart"
+                className=" w-full active:bg-zinc-800 text-gray-900 active:text-white transition-all border-red-700 active:border-blue-900 active:border-4 border-1 pt-1 pb-1 border-solid rounded-sm"
+              >
+                <button className=" w-full block pt-1 pb-1 text-center  ">
+                  مشاهده سبد خرید
+                </button>
+              </Link>
             </div>
           </div>
         ) : (

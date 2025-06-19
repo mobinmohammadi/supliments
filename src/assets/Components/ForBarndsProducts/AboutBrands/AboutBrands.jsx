@@ -12,7 +12,7 @@ export default function AboutBrands() {
   
   
   return (
-    <div className="w-58 sm:flex flex-col hidden rounded-t-md overflow-hidden bg-zinc-800  mt-20">
+    <div className="w-58 sm:flex flex-col hidden rounded-t-md overflow-hidden bg-zinc-800">
       <div className="h-20 relative bg-[#6216cd] flex justify-center">
         <img
         

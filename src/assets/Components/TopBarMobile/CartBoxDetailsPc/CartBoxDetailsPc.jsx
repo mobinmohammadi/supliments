@@ -39,11 +39,11 @@ export default function CartBoxDetailsPc(props) {
           </div>
         </div>
         {cart.length ? (
-          <Link to="/cart" className=" w-full">
-            <span className="bg-green-700 w-full block pt-1 pb-1 text-center text-white">
-              تسویه حساب
-            </span>
-          </Link>
+            <Link to="/cart" className=" w-full">
+              <span className="bg-green-700 w-full block pt-1 pb-1 text-center text-white">
+                تسویه حساب
+              </span>
+            </Link>
         ) : null}
       </div>
       <div className="flex sm:hidden">

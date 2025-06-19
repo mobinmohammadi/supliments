@@ -22,11 +22,11 @@ export default function EasyAddToBasketMobile(props) {
     <div className="w-full flex items-center justify-center">
       <div
         ref={btnAferLoadedPage}
-        className={` gap-0.5 space-x-16 flex  justify-between ${
+        className={` gap-0.5 space-x-16  flex  justify-between ${
           isActiveScroll
-            ? "opacity-0 transitions-Custom fixed"
-            : "opacity-100 fixed"
-        }  bottom-10 w-[80%] border-t-2  border-gray-900 border-solid pt-2  text-center flex pb-2 items-center justify-evenly cursor-pointer rounded-t-sm transition-all bg-white text-gray-900  z-10`}
+            ? "opacity-0 transitions-Custom fixed w-[80%] bottom-10 pr-0 pl-0"
+            : "opacity-100 fixed w-full bottom-1 pr-4 pl-4"
+        }   border-t-2  border-gray-900 border-solid pt-2  text-center flex pb-3 items-center justify-evenly cursor-pointer rounded-t-sm transition-all bg-white text-gray-900  z-10`}
       >
         <div
           onClick={() => styleAndAddToCartHandler()}

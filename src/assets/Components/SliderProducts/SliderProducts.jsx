@@ -19,11 +19,9 @@ export default function SliderProducts({ addProductsToBasket, title }) {
       <SectionsTitle title={title} />
       <div className="mt-5 x:hidden flex gap-8">
         <Swiper
-          slidesPerView={1}
-          spaceBetween={30}
-          pagination={{
-            clickable: true,
-          }}
+          slidesPerView={2}
+          spaceBetween={15}
+
           modules={[Pagination]}
           className="mySwiper"
         >
@@ -45,7 +43,7 @@ export default function SliderProducts({ addProductsToBasket, title }) {
           className="mySwiper"
         >
           {RelatedProducts.map((products) => (
-            <SwiperSlide className="pb-14 cursor-pointer">
+            <SwiperSlide className=" cursor-pointer">
               <BoxOnsPageItemsProducts addProductsToBasket={addProductsToBasket} products={products} />
             </SwiperSlide>
           ))}

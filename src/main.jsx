@@ -16,6 +16,7 @@ import Login from "./Pages/Login/Login.jsx";
 import TheMonyStepOfTheShoppingCart from "./assets/Components/PurchaseProcessCart/TheMonyStepOfTheShoppingCart/TheMonyStepOfTheShoppingCart.jsx";
 import TheFirstStepOfTheShoppingCart from "./assets/Components/PurchaseProcessCart/TheFirstStepOfTheShoppingCart/TheFirstStepOfTheShoppingCart.jsx";
 import ContactUs from "./Pages/ContactUs/ContactUs.jsx";
+import Articles from "./Pages/Articles/Articles.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -42,7 +43,8 @@ createRoot(document.getElementById("root")).render(
             element={<TheMonyStepOfTheShoppingCart />}
           />
         </Route>
-        <Route path="contactus" element={<ContactUs />} />
+        <Route path="/contactus" element={<ContactUs />} />
+        <Route path="/Articles" element={<Articles />} />
 
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFoundPage />} />

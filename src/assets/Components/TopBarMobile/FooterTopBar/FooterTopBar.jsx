@@ -110,7 +110,7 @@ export default function FooterTopBar() {
             <span>بلاگ</span>
             <span className="w-1 opacity-0 group-hover:opacity-100 absolute group-hover:w-full transition-all -bottom-1 bg-red-600 h-[2px] right-0"></span>
           </div>
-          <Link to="contactus" className="mt-1 relative group">
+          <Link to="/contactus" className="mt-1 relative group">
             <span>تماس با ما</span>
             <span className="w-1 opacity-0 group-hover:opacity-100 absolute group-hover:w-full transition-all -bottom-1 bg-red-600 h-[2px] right-0"></span>
           </Link>

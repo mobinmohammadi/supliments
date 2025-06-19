@@ -37,7 +37,7 @@ export default function OnsPageContent({}) {
 
   useEffect(() => {
     setSrcProductStatus(filtredOnsProducts[0].img);
-  }, []);
+  }, [filtredOnsProducts]);
   const subImg = filtredOnsProducts[0].subImg.map((img) => img.img);
 
   function handlePageShare() {
