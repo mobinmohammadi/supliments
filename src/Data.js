@@ -1,5 +1,3 @@
-
-
 const allProducts = [
   {
     id: 1,
@@ -98,7 +96,7 @@ const allProducts = [
       { id: 1, img: "./../Images/Products/5.webp" },
       { id: 2, img: "./../Images/Products/5-1.webp" },
     ],
-    categury : "glotamin",
+    categury: "glotamin",
     categurytext: "Unknown",
     taste: [],
     info: {
@@ -120,7 +118,7 @@ const allProducts = [
     ],
     categury: "creatin",
     categurytext: "creatin",
-    price : 3_600_000,
+    price: 3_600_000,
     taste: [],
     info: {
       type: "پودر",
@@ -196,9 +194,7 @@ const allProducts = [
     name: "پمپ نوتری نیترو",
     price: 1890000,
     img: "./../Images/Products/14.webp",
-    subImg: [
-      { id: 1, img: "./../Images/Products/14-1.webp" },
-    ],
+    subImg: [{ id: 1, img: "./../Images/Products/14-1.webp" }],
     categury: "pump",
     categurytext: "Pump",
     taste: [],
@@ -329,7 +325,7 @@ const allProducts = [
     },
     status: "1",
   },
-   {
+  {
     id: 19,
     name: "آمینو وی ناترکس",
     price: 1980000,
@@ -429,7 +425,7 @@ const allProducts = [
     },
     status: "1",
   },
-   {
+  {
     id: 24,
     name: "گلوتامین اپتیموم نوتریشن",
     price: 2100000,
@@ -529,7 +525,7 @@ const allProducts = [
     },
     status: "1",
   },
-   {
+  {
     id: 29,
     name: "مولتی ویتامین اپتی-من اپتیموم",
     price: 1650000,
@@ -631,22 +627,67 @@ const allProducts = [
   },
 ];
 
-
-
-
-
-
 const allCategury = [
-  { id: 1, name: "پروتئین وی", img: "./Images/Categury/1.webp" , link : "/categuryByProducts/protein"},
-  { id: 2, name: "آمینواسید ها", img: "./Images/Categury/5.webp" , link : "/categuryByProducts/amino"},
-  { id: 3, name: "گینر", img: "./Images/Categury/3.webp" , link : "/categuryByProducts/gainer"},
-  { id: 4, name: "کربو مس ", img: "./Images/Categury/4.webp" , link : "/categuryByProducts/carbomas"},
-  { id: 5, name: "کراتین", img: "./Images/Categury/6.webp" , link : "/categuryByProducts/ceratin"},
-  { id: 6, name: "تست بوستر", img: "./Images/Categury/11.webp" , link : "/categuryByProducts/testboaster"},
-  { id: 7, name: "گلوتامین", img: "./Images/Categury/8.webp" , link : "/categuryByProducts/glotamin"},
-  { id: 8, name: "مولتی ویتامین", img: "./Images/Categury/12.webp" , link : "/categuryByProducts/moltivitamin"},
-  { id: 9, name: "بی سی ای ای", img: "./Images/Categury/2.png" , link : "/categuryByProducts/bcaa"},
-  { id: 10, name: "پروتئین وی ", img: "./Images/Categury/1.webp" , link : "/categuryByProducts/protein"},
+  {
+    id: 1,
+    name: "پروتئین وی",
+    img: "./Images/Categury/1.webp",
+    link: "/categuryByProducts/protein",
+  },
+  {
+    id: 2,
+    name: "آمینواسید ها",
+    img: "./Images/Categury/5.webp",
+    link: "/categuryByProducts/amino",
+  },
+  {
+    id: 3,
+    name: "گینر",
+    img: "./Images/Categury/3.webp",
+    link: "/categuryByProducts/gainer",
+  },
+  {
+    id: 4,
+    name: "کربو مس ",
+    img: "./Images/Categury/4.webp",
+    link: "/categuryByProducts/carbomas",
+  },
+  {
+    id: 5,
+    name: "کراتین",
+    img: "./Images/Categury/6.webp",
+    link: "/categuryByProducts/ceratin",
+  },
+  {
+    id: 6,
+    name: "تست بوستر",
+    img: "./Images/Categury/11.webp",
+    link: "/categuryByProducts/testboaster",
+  },
+  {
+    id: 7,
+    name: "گلوتامین",
+    img: "./Images/Categury/8.webp",
+    link: "/categuryByProducts/glotamin",
+  },
+  {
+    id: 8,
+    name: "مولتی ویتامین",
+    img: "./Images/Categury/12.webp",
+    link: "/categuryByProducts/moltivitamin",
+  },
+  {
+    id: 9,
+    name: "بی سی ای ای",
+    img: "./Images/Categury/2.png",
+    link: "/categuryByProducts/bcaa",
+  },
+  {
+    id: 10,
+    name: "پروتئین وی ",
+    img: "./Images/Categury/1.webp",
+    link: "/categuryByProducts/protein",
+  },
 ];
 
 const preSellProducts = [
@@ -665,9 +706,8 @@ const preSellProducts = [
         img: "./../Images/Products/2-2.webp",
       },
     ],
-    taste : [],
-    qty : 1
-
+    taste: [],
+    qty: 1,
   },
   {
     id: 2,
@@ -684,9 +724,8 @@ const preSellProducts = [
         img: "./../Images/Products/1-2.webp",
       },
     ],
-    taste : [],
-    qty : 1
-
+    taste: [],
+    qty: 1,
   },
   {
     id: 3,
@@ -703,10 +742,8 @@ const preSellProducts = [
         img: "./../Images/Products/3-3.webp",
       },
     ],
-    taste : [],
-    qty : 1
-
-
+    taste: [],
+    qty: 1,
   },
   {
     id: 4,
@@ -728,15 +765,14 @@ const preSellProducts = [
       },
     ],
     taste: [
-      { id: 1, title: " آدامس بادکنکی", status: '1' },
-      { id: 2, title: "  کیک بلوبری", status: '0' },
-      { id: 3, title: " تافی پاپ کورن ", status: '1' },
-      { id: 4, title: "  بستنی وانیلی", status: '0' },
+      { id: 1, title: " آدامس بادکنکی", status: "1" },
+      { id: 2, title: "  کیک بلوبری", status: "0" },
+      { id: 3, title: " تافی پاپ کورن ", status: "1" },
+      { id: 4, title: "  بستنی وانیلی", status: "0" },
       { id: 5, title: " کارامل " },
-      { id: 6, title: "  کیک هویج", status: '0' }
+      { id: 6, title: "  کیک هویج", status: "0" },
     ],
-    qty : 1
-
+    qty: 1,
   },
   {
     id: 5,
@@ -752,12 +788,9 @@ const preSellProducts = [
         id: 2,
         img: "./../Images/Products/5-2.webp",
       },
-
     ],
-    taste : [],
-    qty : 1
-
-
+    taste: [],
+    qty: 1,
   },
   {
     id: 6,
@@ -774,10 +807,8 @@ const preSellProducts = [
       },
     ],
     price: 3_600_000,
-    taste : [],
-    qty : 1
-
-
+    taste: [],
+    qty: 1,
   },
   {
     id: 7,
@@ -794,10 +825,8 @@ const preSellProducts = [
         img: "./../Images/Products/10-2.webp",
       },
     ],
-    taste : [],
-    qty : 1
-
-
+    taste: [],
+    qty: 1,
   },
   {
     id: 8,
@@ -814,10 +843,8 @@ const preSellProducts = [
         img: "./../Images/Products/12-2.webp",
       },
     ],
-    taste : [],
-    qty : 1
-
-
+    taste: [],
+    qty: 1,
   },
 ];
 
@@ -1090,7 +1117,12 @@ const RelatedProducts = [
     price: 825_000,
     img: "./../Images/Products/5.webp",
   },
-  { id: 6, name: "کراتین مونوهیدرات ماسلتک", img: "./Images/Products/6.webp" , price: 3_600_000,},
+  {
+    id: 6,
+    name: "کراتین مونوهیدرات ماسلتک",
+    img: "./Images/Products/6.webp",
+    price: 3_600_000,
+  },
   {
     id: 7,
     name: "مس گینر",
@@ -1100,12 +1132,33 @@ const RelatedProducts = [
 ];
 
 const DataFrequentlyAskedQuestions = [
-  {id : 1 , qustion : "کدام مکمل برای افزایش حجم و وزن بهتر است؟"  , answer : "گینر و کراتین بهترین مکمل‌ها برای افزایش حجم و وزن هستند."},
-  {id : 2 , qustion : "بهترین مکمل برای سوزاندن چربی و کاهش وزن چیست؟"  , answer : "بهترین مکمل برای کاهش وزن چربی‌سوز است."},
-  {id : 3 , qustion : "آیا مصرف مکمل‌های بدنسازی عوارضی دارد؟", answer : "مصرف بیش از توصیه شده امکان آسیب دارد. "},
-  {id : 4 , qustion : "آیا مکمل‌هایی که در فروشگاه محمدی به فروش می‌رسند اصل و قابل اعتماد هستند؟"  , answer : "بله همه مکمل‌ها وارداتی هستند و به صورت اورجینال ارائه می‌شوند."},
-  {id : 5 , qustion : "آیا مکمل‌های بدنسازی امکان بازگشت و مرجوعی دارند؟"  , answer : "بله درصورتی که پلمپ محصول باز نشده باشد."},
-]
+  {
+    id: 1,
+    qustion: "کدام مکمل برای افزایش حجم و وزن بهتر است؟",
+    answer: "گینر و کراتین بهترین مکمل‌ها برای افزایش حجم و وزن هستند.",
+  },
+  {
+    id: 2,
+    qustion: "بهترین مکمل برای سوزاندن چربی و کاهش وزن چیست؟",
+    answer: "بهترین مکمل برای کاهش وزن چربی‌سوز است.",
+  },
+  {
+    id: 3,
+    qustion: "آیا مصرف مکمل‌های بدنسازی عوارضی دارد؟",
+    answer: "مصرف بیش از توصیه شده امکان آسیب دارد. ",
+  },
+  {
+    id: 4,
+    qustion:
+      "آیا مکمل‌هایی که در فروشگاه محمدی به فروش می‌رسند اصل و قابل اعتماد هستند؟",
+    answer: "بله همه مکمل‌ها وارداتی هستند و به صورت اورجینال ارائه می‌شوند.",
+  },
+  {
+    id: 5,
+    qustion: "آیا مکمل‌های بدنسازی امکان بازگشت و مرجوعی دارند؟",
+    answer: "بله درصورتی که پلمپ محصول باز نشده باشد.",
+  },
+];
 
 const TitleCategury = [
   "پیش فرض",
@@ -1113,9 +1166,47 @@ const TitleCategury = [
   "ارزان ترین",
   "جدید ترین",
   "گران ترین",
-]
+];
 
+// const articles = [
+//   {
+//     id: 1,
+//     title: "بهترین آمینواسید برای حجم",
+//     imgaeFirst: "",
+//     onsDiscription:
+//       "قطعاً تمام ورزشکاران و بدنسازان دوست دارند بدنی فوق‌العاده و قوی داشته باشند. تصور کنید بدنی دارید که مانند یک ساختمان مستحکم، قطعه به قطعه با بهترین مصالح ساخته شده است. آمینواسیدها دقیقاً همان مصالحی هستند که عضلات شما را می‌سازند، ترمیم می‌کنند و به آن حجم می‌بخشند. اگر به دنبال افزایش حجم عضلات و بهبود عملکرد ورزشی خود هستید، این مقاله راهنمای شما برای شناخت بهترین آمینواسیدها و نحوه استفاده هوشمندانه از آنهاست تا راحت‌تر بتوانید مسیر رسیدن به هدف ورزشی‌تان را دنبال کنید. ",
+//     header: {
+//       img : "./../../Images/Articles/6.webp",
+//       titleHeader : [
+//         { title: "آمینواسید چیست و چه اثری روی بدن دارد؟" },
+//         {
+//           desc: "آمینواسیدها واحدهای سازنده پروتئین هستند که مانند آجرهای یک ساختمان، تمام بافت‌های بدن از جمله عضلات، پوست و آنزیم‌ها را تشکیل می‌دهند. از ۲۰ نوع آمینواسید موجود در پروتئین‌ها، ۹ مورد به‌عنوان اسیدهای آمینه ضروری شناخته می‌شوند، یعنی بدن قادر به تولید آنها نیست و باید از طریق رژیم غذایی یا مکمل‌ها تأمین شوند. حال که با اسیدهای آمینه آشنا شدیم، لازم است کارکرد این ماده مهم در بدن را هم بدانیم. اثرات کلیدی آمینواسیدها روی بدن عبارت‌اند از:  ",
+//         },
+//         (arrayTitle = [
+//           "کمک به سنتز پروتئین عضلات و بازسازی فیبرهای عضلانی پس از تمرینات سنگین ",
+//           "جلوگیری از تخریب عضلات یا همان کاتابولیسم، به‌ویژه در دوره‌های کالری کم یا تمرینات استقامتی ",
+//           "کمک به تولید انرژی",
+//       ]),
+//       ],
+//       firstLink: "آمینواسید چیست و چه اثری روی بدن دارد؟",
+//       twoLink: [
+//         { title: "معرفی بهترین آمینواسیدها برای حجم " },
+//         {
+//           disc: "برای افزایش حجم عضلات، برخی آمینواسیدها به دلیل نقش ویژه‌ای که در سنتز پروتئین و بهبود عملکرد ورزشی دارند، از اهمیت بالاتری برخوردارند. در ادامه، بهترین و مؤثرترین آمینواسیدها برای حجم را بررسی می‌کنیم تا از آن‌ها برای عضله‌سازی بیشتر کمک بگیرید. ",
+//         },
 
+//         (disLink = [
+//           "آمینواسیدهای شاخه‌دار BCAA",
+//           "مکمل لوسین",
+//           "بتا آلانین",
+//           "ال-سیترولین",
+//         ]),
+//       ],
+//       lastLink: "آمینواسید اصل برای حجم را از کجا بخریم؟",
+//       finish: "سخن پایانی",
+//     },
+//   },
+// ];
 
 export {
   allCategury,
@@ -1124,7 +1215,8 @@ export {
   preSellProducts,
   allBrandLogo,
   allArticles,
+  // articles,
   papularSearchesInwebsite,
   DataFrequentlyAskedQuestions,
-  TitleCategury
+  TitleCategury,
 };

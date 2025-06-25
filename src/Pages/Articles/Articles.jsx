@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import TopBarMobile from "./../../assets/Components/TopBarMobile/TopBarMobile.";
 import "../../App.css";
+// import { articles } from "../../Data";
 
 export default function Articles() {
   const [isLoader, setIsLoader] = useState(true);
@@ -10,7 +11,11 @@ export default function Articles() {
     setTimeout(() => {
       setIsLoader(false);
     }, 300);
+    // console.log(articles);
+    
   }, []);
+
+
   return (
     <>
       <TopBarMobile />
