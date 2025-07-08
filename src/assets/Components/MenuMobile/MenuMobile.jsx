@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ShowWrapperSearch from "../NavMenuBeautiful/ShowWrapperSearch";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../Context/CartContext";
 
 export default function MenuMobile() {
   const [isShowSearchBox, setIsShowSearchBox] = useState(null);
   const cancelActions = () => {
     setIsShowSearchBox(false);
   };
+  const basketUser = useContext(CartContext)
+  console.log(basketUser);
+  
 
   const arrayMenu = [
     { id: 1, title: "پنل کابری", link: "/login", svg: "#user-home" },
@@ -24,7 +28,7 @@ export default function MenuMobile() {
       link: "/categuryByProducts/protein",
       svg: "#cube-transparent",
     },
-    { id: 4, title: "سبد خرید", link: "/cart", svg: "#shopping-bag" },
+    { id: 4, title: "سبد خرید", link: basketUser.cart.length > 0  ? "/cart" : "/EmptyBasket" , svg: "#shopping-bag" },
   ];
 
   return (
