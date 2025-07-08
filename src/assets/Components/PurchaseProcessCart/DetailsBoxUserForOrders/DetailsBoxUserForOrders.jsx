@@ -1,8 +1,7 @@
 // Updated and cleaned-up version of DetailsBoxUserForOrders
 import React, { useEffect, useState } from "react";
-import InputField from "../CustomElem/InputFiled/InputField";
+import InputField from "../CustomElem/InputFiled/InputField"
 import TextAreaField from "../CustomElem/TextAreaField/TextAreaField";
-import SelectFiled from "./../customElem/SelectFiled/SelectFiled";
 import provincesData from "./../../../../provincesData.json";
 import { useFormik } from "formik";
 import * as Yup from "yup";
