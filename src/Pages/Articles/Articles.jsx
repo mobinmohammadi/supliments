@@ -11,7 +11,6 @@ export default function Articles() {
     setTimeout(() => {
       setIsLoader(false);
     }, 300);
-    // console.log(articles);
     
   }, []);
 

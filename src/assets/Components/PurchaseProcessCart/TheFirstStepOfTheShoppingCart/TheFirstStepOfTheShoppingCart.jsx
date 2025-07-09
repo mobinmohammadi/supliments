@@ -9,7 +9,6 @@ import BradCrumbCart from "../BradCrumbCart/BradCrumbCart";
 
 export default function TheFirstStepOfTheShoppingCart() {
   const { cart, allPriceInBasket } = useContext(CartContext);
-  console.log(cart);
 
   return (
     <div className="w-full flex flex-col gap-7">

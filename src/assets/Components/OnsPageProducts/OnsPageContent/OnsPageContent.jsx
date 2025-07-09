@@ -25,7 +25,6 @@ export default function OnsPageContent({}) {
   let [titleForBasket, setTitleForBasket] = useState("");
 
   function setSrcImageProductsHandler(srcSerialImg) {
-    console.log("srcSerialImg ====>", srcSerialImg);
     setSrcProductStatus(srcSerialImg);
   }
 
@@ -42,7 +41,6 @@ export default function OnsPageContent({}) {
 
   function handlePageShare() {
     setIsShowPageShare(true);
-    console.log(isShowPageShare);
   }
 
   function cancellActionsForShareProducts() {
@@ -69,7 +67,6 @@ export default function OnsPageContent({}) {
 
   if (statusFoudProducts.length > 0) {
     const result = statusFoudProducts[0];
-    console.log(result.status);
 
     if (result.status == 0) {
       titleForBasket = "از این طعم موجودی نداریم 😭";
@@ -115,7 +112,6 @@ export default function OnsPageContent({}) {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  // console.log(isActiveScroll);
 
   const styleAndAddToCartHandler = () => {
     addToCart(filtredOnsProducts[0]);

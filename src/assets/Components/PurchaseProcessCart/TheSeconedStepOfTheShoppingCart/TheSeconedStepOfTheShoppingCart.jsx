@@ -17,7 +17,6 @@ export default function TheSeconedStepOfTheShoppingCart() {
   const editOnUserOrders = (userDataID) => {
     const convertLocalStorage = JSON.parse(localStorage.getItem("userOrders"));
     const userD = convertLocalStorage.find((item) => item.id == userDataID);
-    console.log(userD);
 
     setDataForEdit(userD);
 
@@ -28,9 +27,7 @@ export default function TheSeconedStepOfTheShoppingCart() {
   const [isActiveAddreas, setActiveAddreas] = useState("");
 
   const removeAddreas = (addreas) => {
-    console.log(addreas);
     const dataForDelete = JSON.parse(localStorage.getItem("userOrders"));
-    console.log(dataForDelete);
 
     const removeAddreas = dataForDelete.filter((item) => item.id !== addreas);
     localStorage.setItem("userOrders", JSON.stringify(removeAddreas));

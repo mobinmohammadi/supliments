@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 export default function BradCrumb(props) {
     let params  = location.pathname
-    console.log(params);
     let title = ""
 
     switch(params){

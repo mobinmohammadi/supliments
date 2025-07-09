@@ -11,21 +11,21 @@ export default function ImagesAndSliderForProductsSinglePages({
 }) {
   function handlePageShare() {
     setIsShowPageShare(true);
-    console.log(isShowPageShare);
   }
 
   // ==============================================================
 
   const textForZoomProduct = useRef();
-
-  setTimeout(() => {
-    textForZoomProduct.current.className =
-      "bottom-[85%] opacity-100 absolute  visible invisible opacity-0 transitions-Custom  bg-zinc-500 text-white font-bold shadow-2xl w-full text-sm rounded-sm pt-2 pb-2 flex justify-center";
-  }, 1000);
-  setTimeout(() => {
-    textForZoomProduct.current.className =
-      "bottom-full absolute invisible transitions-Custom  opacity-100  bg-zinc-500 text-white font-bold shadow-2xl w-full text-sm rounded-sm pt-2 pb-2 flex justify-center";
-  }, 4000);
+  useEffect(() => {
+    setTimeout(() => {
+      textForZoomProduct.current.className =
+        "bottom-[85%] opacity-100 absolute  visible invisible opacity-0 transitions-Custom  bg-zinc-500 text-white font-bold shadow-2xl w-full text-sm rounded-sm pt-2 pb-2 flex justify-center";
+    }, 1000);
+    setTimeout(() => {
+      textForZoomProduct.current.className =
+        "bottom-full absolute invisible transitions-Custom  opacity-100  bg-zinc-500 text-white font-bold shadow-2xl w-full text-sm rounded-sm pt-2 pb-2 flex justify-center";
+    }, 4000);
+  }, []);
 
   // ==========    Handle Page Share   ===========================
 
@@ -84,7 +84,6 @@ export default function ImagesAndSliderForProductsSinglePages({
           <img
             ref={styleImgAfterLoaded}
             onClick={() => setIsShowSliderMoreOnOneProducts(true)}
-            // h-[60]
             className="cursor-pointer object-cover w-72 h-3 opacity-0 invisible  sm:w-[250px] rounded-sm"
             src={srcProductStatus}
             alt=""
@@ -98,13 +97,13 @@ export default function ImagesAndSliderForProductsSinglePages({
           </span>
         </div>
       </div>
-      {/* {console.log(filtredOnsProducts)} */}
       <div
         className="justify-end pl-4  mt-10 flex & > *:rounded-md & > *:cursor-pointer gap-2 & > *:border & > *:border-slate-700 & > *:border-solid
-        "
+          "
       >
-        {subImg.map((img , index) => (
-          <img key={index + 1}
+        {subImg.map((img, index) => (
+          <img
+            key={index + 1}
             onClick={() => setSrcImageProductsHandler(img)}
             className="w-18 "
             src={img}

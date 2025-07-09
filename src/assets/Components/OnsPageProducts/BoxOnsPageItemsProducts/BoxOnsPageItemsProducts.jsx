@@ -13,7 +13,6 @@ export default function BoxOnsPageItemsProducts({
   const disibledAddToBasketBtn = useRef(null);
 
   const loaderAndAddToBasketHandler = (e) => {
-    // console.log("ljksjvji ===> ", props.items.id);
     addToCart(products);
 
     disibledAddToBasketBtn.current.classList.add("opacity-100");

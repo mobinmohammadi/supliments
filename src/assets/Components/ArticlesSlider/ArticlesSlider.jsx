@@ -47,8 +47,8 @@ export default function ArticlesSlider() {
     <div className="relative mt-10 ">
       <div ref={sliderRef} className="keen-slider h-full bg-white pt-5 rounded-md ">
         {allArticles.slice(0, 4).map((articles) => (
-          <div className="keen-slider__slide number-slide1  h-full flex items-center justify-center text-white text-2xl font-bold">
-            <ArticlesItems key={articles.id} {...articles} />
+          <div key={articles.id} className="keen-slider__slide number-slide1  h-full flex items-center justify-center text-white text-2xl font-bold">
+            <ArticlesItems  {...articles} />
           </div>
         ))}
       </div>

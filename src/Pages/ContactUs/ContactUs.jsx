@@ -28,7 +28,6 @@ export default function ContactUs() {
     onSubmit: handlerFormContent,
   });
   function handlerFormContent() {
-    console.log(formik.values);
   }
 
   return (

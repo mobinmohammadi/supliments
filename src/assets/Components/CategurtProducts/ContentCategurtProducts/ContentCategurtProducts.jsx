@@ -25,7 +25,6 @@ export default function ContentCategurtProducts({
         newDataAfterCategury = newDataAfterCategury.filter(
           (product) => product.price < 2000000
         );
-        console.log(newDataAfterCategury)
         
         break;
       case "گران ترین":

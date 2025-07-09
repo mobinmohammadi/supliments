@@ -5,10 +5,8 @@ import { allBrandLogo } from "../../../../Data";
 export default function AboutBrands() {
 
   const param = useParams().BrandName
-  console.log(param);
   const brandTitleAbout = allBrandLogo.filter(brand => brand.name == param)
   
-  console.log(brandTitleAbout);
   
   
   return (

@@ -18,7 +18,6 @@ export default function SliderPreeSellProducts() {
 
   const addToUserBasket = (Product) => {
     setUserBasket([...userBasket, {...Product}]);
-    console.log(userBasket);
     
   };
 

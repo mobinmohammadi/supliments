@@ -14,7 +14,6 @@ export default function InputField({
   
 
   
-  // console.log("formik ==> " , formik);
   
   return (
     <div className="flex gap-2 flex-col">
@@ -26,7 +25,6 @@ export default function InputField({
         <input
           name={item.nameFormik}
           value={formik[item.nameFormik] || ""}
-        //   id={formik.nameFormik}
           onChange={handleChangeFormik}
           type="text"
           className="w-full pr-2 outline-0  h-full"

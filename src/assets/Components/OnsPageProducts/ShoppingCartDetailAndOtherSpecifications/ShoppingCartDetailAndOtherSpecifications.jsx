@@ -15,19 +15,19 @@ export default function ShoppingCartDetailAndOtherSpecifications({
   useEffect(() => {}, [titleForBasket]);
   const { addToCart } = useContext(CartContext);
 
-  const handlerByCountSelectUser = (product) => {
-    if (product.count) {
-      console.log("دارد");
-      console.log(product.count);
-      console.log();
-    } else {
-      product.count = 0
-      const neewArra = {...product, count: (product.count = countProductSelect) };
-      console.log(neewArra);
+  // const handlerByCountSelectUser = (product) => {
+  //   if (product.count) {
+  //     console.log("دارد");
+  //     console.log(product.count);
+  //     console.log();
+  //   } else {
+  //     product.count = 0
+  //     const neewArra = {...product, count: (product.count = countProductSelect) };
+  //     console.log(neewArra);
 
-      console.log("ندارد");
-    }
-  };
+  //     console.log("ندارد");
+  //   }
+  // };
 
 
   return (
@@ -119,7 +119,7 @@ export default function ShoppingCartDetailAndOtherSpecifications({
             </span>
           </div>
         ) : (
-          <div className="bg-green-700 gap-0.5 abs rounded-sm text-white pt-3 pb-3 justify-center flex items-center">
+          <div onClick={() => addToCart(filtredOnsProducts[0])} className="bg-green-700 gap-0.5 abs rounded-sm text-white pt-3 pb-3 justify-center flex items-center">
             <div className="flex  gap-0.5">
               <svg className="w-5 h-5 ">
                 <use href="#shopping-cart"></use>

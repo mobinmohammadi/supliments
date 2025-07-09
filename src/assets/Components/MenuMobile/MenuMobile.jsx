@@ -40,6 +40,7 @@ export default function MenuMobile() {
         {arrayMenu.map((item) => (
           <Link
             to={item.link}
+            key={item.id}
             className="flex flex-col max-w-24 gap-1 items-center"
             onClick={() => {
                setIsShowSearchBox(true) 
