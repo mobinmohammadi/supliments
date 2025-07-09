@@ -8,8 +8,6 @@ export default function MenuMobile() {
   const cancelActions = () => {
     setIsShowSearchBox(false);
   };
-  const basketUser = useContext(CartContext)
-  console.log(basketUser);
   
 
   const arrayMenu = [
@@ -28,7 +26,7 @@ export default function MenuMobile() {
       link: "/categuryByProducts/protein",
       svg: "#cube-transparent",
     },
-    { id: 4, title: "سبد خرید", link: basketUser.cart.length > 0  ? "/cart" : "/EmptyBasket" , svg: "#shopping-bag" },
+    { id: 4, title: "سبد خرید", link:  "/cart"  , svg: "#shopping-bag" },
   ];
 
   return (

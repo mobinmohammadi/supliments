@@ -52,6 +52,6 @@ createRoot(document.getElementById("root")).render(
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </CartProvider>
-    <ToastContainer autoClose={2000} position="top-right" />
+    <ToastContainer autoClose={2000} position="top-left" />
   </BrowserRouter>
 );
